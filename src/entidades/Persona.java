@@ -14,6 +14,11 @@ public abstract class Persona {
     private String telefono;
     private String correoElectronico;
 
+    public Persona()
+    {
+        
+    }
+    
     public Persona(String nombreCompleto, String direccion, String telefono, String correoElectronico) {
         this.nombreCompleto = nombreCompleto;
         this.direccion = direccion;
@@ -49,4 +54,12 @@ public abstract class Persona {
         return nombreCompleto;
     }
     
+    @Override
+    public String toString()
+    {
+        return "\n\tNombre: "+ getNombreCompleto()+
+                "\n\tTelefono: "+ getTelefono()+
+                "\n\tDireccion: "+ getDireccion()+
+                "\n\tCorreo Electronico: "+getCorreoElectronico();
+    }
 }
