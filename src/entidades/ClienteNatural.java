@@ -4,6 +4,8 @@
  */
 package entidades;
 
+import java.util.*;
+
 /**
  *
  * @author misterioso
@@ -11,4 +13,5 @@ package entidades;
 public class ClienteNatural {
     private String dni;
     private String estadoCivil;
+    private GregorianCalendar fechaNacimiento;
 }
