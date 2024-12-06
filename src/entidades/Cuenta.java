@@ -22,6 +22,7 @@ public class Cuenta {
     private static int totalCuentasCorriente;
     
     
+    
     public Cuenta(float saldoCuenta, String clave, int tipoCuenta) { 
         this.tipoCuenta = tipoCuenta;
         this.saldoCuenta = saldoCuenta;
