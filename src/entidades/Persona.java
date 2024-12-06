@@ -9,5 +9,5 @@ package entidades;
  * @author JuanMistery
  */
 public abstract class Persona {
-    
+    private String nombre;
 }
