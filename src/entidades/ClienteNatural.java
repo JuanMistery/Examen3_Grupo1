@@ -6,8 +6,9 @@ package entidades;
 
 /**
  *
- * @author USUARIO
+ * @author misterioso
  */
 public class ClienteNatural {
-    
+    private String dni;
+    private String estadoCivil;
 }
