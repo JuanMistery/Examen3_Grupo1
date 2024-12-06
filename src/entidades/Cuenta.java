@@ -17,4 +17,8 @@ public class Cuenta {
     private GregorianCalendar fechaCreacion;
     private int tipoDeCuenta;
     private int tipoMonedaCuenta;
+    
+    public Cuenta(){
+        
+    }
 }
