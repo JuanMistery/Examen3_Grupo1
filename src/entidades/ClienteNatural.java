@@ -11,20 +11,26 @@ import java.util.*;
  * @author misterioso
  */
 public class ClienteNatural {
-    private String dni;
+    private int tipoDeDocumentoDeIdentidad;
+    private String documentoDeIdentidad;
     private String estadoCivil;
     private GregorianCalendar fechaNacimiento;
 
-    public ClienteNatural(String dni, String estadoCivil, GregorianCalendar fechaNacimiento) {
-        this.dni = dni;
+    public ClienteNatural(int tipoDeDocumentoDeIdentidad, String documentoDeIdentidad, String estadoCivil, GregorianCalendar fechaNacimiento) {
+        this.tipoDeDocumentoDeIdentidad = tipoDeDocumentoDeIdentidad;
+        this.documentoDeIdentidad = documentoDeIdentidad;
         this.estadoCivil = estadoCivil;
         this.fechaNacimiento = fechaNacimiento;
     }
 
-    public String getDni() {
-        return dni;
+    public int getTipoDeDocumentoDeIdentidad() {
+        return tipoDeDocumentoDeIdentidad;
     }
 
+    public String getDocumentoDeIdentidad() {
+        return documentoDeIdentidad;
+    }
+    
     public String getEstadoCivil() {
         return estadoCivil;
     }
@@ -44,10 +50,28 @@ public class ClienteNatural {
     @Override
     public String toString()
     {
-        return super.toString()+
-                "\n\tDNI: "+ getDni()+
+        return super.toString()+ DocumentoDeIdentidad()+
                 "\n\tEstado Civil: "+ getEstadoCivil()+
                 "\n\tFecha Nacimiento: "+ getFechaNacimientoCorta();
+    }
+    
+    public String DocumentoDeIdentidad()
+    {
+        if(getTipoDeDocumentoDeIdentidad()==1)
+        {
+            return "\n\tDNI: "+ getDocumentoDeIdentidad();
+        }
+        else
+        {
+            if(getTipoDeDocumentoDeIdentidad()==2)
+            {
+                return "\n\tPasaporte: "+getDocumentoDeIdentidad();
+            }
+            else
+            {
+                return "\n\tCedula: "+getDocumentoDeIdentidad();
+            }
+        }
     }
     
     public String getFechaNacimientoCorta() {
