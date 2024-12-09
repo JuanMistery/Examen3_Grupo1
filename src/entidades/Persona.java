@@ -9,7 +9,8 @@ package entidades;
  * @author JuanMistery
  */
 public abstract class Persona {
-    private String nombreCompleto;
+    private String nombres;
+    private String apellidos;
     private String direccion;
     private String telefono;
     private String correoElectronico;
@@ -18,12 +19,21 @@ public abstract class Persona {
     {
         
     }
-    
-    public Persona(String nombreCompleto, String direccion, String telefono, String correoElectronico) {
-        this.nombreCompleto = nombreCompleto;
+
+    public Persona(String nombres, String apellidos, String direccion, String telefono, String correoElectronico) {
+        this.nombres = nombres;
+        this.apellidos = apellidos;
         this.direccion = direccion;
         this.telefono = telefono;
         this.correoElectronico = correoElectronico;
+    }
+
+    public String getNombres() {
+        return nombres;
+    }
+
+    public String getApellidos() {
+        return apellidos;
     }
 
     public String getDireccion() {
@@ -49,15 +59,11 @@ public abstract class Persona {
     public void setCorreoElectronico(String correoElectronico) {
         this.correoElectronico = correoElectronico;
     }
-
-    public String getNombreCompleto() {
-        return nombreCompleto;
-    }
     
     @Override
     public String toString()
     {
-        return "\n\tNombre: "+ getNombreCompleto()+
+        return "\n\tNombre: "+ getNombres()+ getApellidos()+
                 "\n\tTelefono: "+ getTelefono()+
                 "\n\tDireccion: "+ getDireccion()+
                 "\n\tCorreo Electronico: "+getCorreoElectronico();
