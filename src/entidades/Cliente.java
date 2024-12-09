@@ -11,9 +11,29 @@ package entidades;
 public class Cliente extends Persona{
     private int tipoCliente;
 
-    public Cliente(int tipoCliente, String nombreCompleto, String direccion, String telefono, String correoElectronico) {
-        super(nombreCompleto, direccion, telefono, correoElectronico);
+    public Cliente(int tipoCliente, String nombres, String apellidos, String direccion, String telefono, String correoElectronico) {
+        super(nombres, apellidos, direccion, telefono, correoElectronico);
         this.tipoCliente = tipoCliente;
+    }
+
+    public int getTipoCliente() {
+        return tipoCliente;
+    }
+    
+    @Override
+    public String toString()
+    {
+        if(tipoCliente==1)
+        {
+            return super.toString();
+        }
+        else
+        {
+            return "Representante Legal: "+ getNombres()+" "+getApellidos()+
+                    "Direccion del Representante Legal: "+ getDireccion()+
+                    "Telefono del Representante Legal: "+ getTelefono()+
+                    "Correo Electronico del Representante Legal: "+ getCorreoElectronico();
+        }
     }
     
 }
