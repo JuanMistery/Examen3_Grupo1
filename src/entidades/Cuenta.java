@@ -4,9 +4,7 @@
  */
 package entidades;
 
-import java.util.ArrayList;
-import java.util.Calendar;
-import java.util.GregorianCalendar;
+import java.util.*;
 
 /**
  *
@@ -293,16 +291,16 @@ public abstract class Cuenta implements ImptoTransaccionesFinancieras{
     }
            
      public boolean realizarTransferencia(float montoTrans){
-         
+         return true;
      }
      public boolean emisionCheques(float montoCheque){
-         
+         return true;
      }
      public boolean cobroCheques(float montoCheque){
-         
+         return true;
      }
      public boolean verificacionCheques(String codigoCheque){
-         
+         return true;
      }
    }  
 }

@@ -4,7 +4,7 @@
  */
 package entidades;
 
-import java.util.GregorianCalendar;
+import java.util.*;
 
 /**
  *
@@ -13,16 +13,17 @@ import java.util.GregorianCalendar;
 public class CuentaAhorro extends Cuenta {
     private float limiteDeRetiro;
     private GregorianCalendar fechaDeCorte;
-    
-    
-    
-    public CuentaAhorro(float saldoCuenta,String clave, int tipoCuenta,float limiteDeRetiro){
-        super(saldoCuenta,clave, tipoCuenta);
+
+    public CuentaAhorro(float limiteDeRetiro, GregorianCalendar fechaDeCorte, float saldoCuenta, String clave, int tipoCuenta, Cliente titularDeCuenta) {
+        super(saldoCuenta, clave, tipoCuenta, titularDeCuenta);
         this.limiteDeRetiro = limiteDeRetiro;
+        this.fechaDeCorte = fechaDeCorte;
     }
-    public CuentaAhorro(String clave, int tipoCuenta,float limiteDeRetiro){
-        super(clave, tipoCuenta);
+
+    public CuentaAhorro(float limiteDeRetiro, GregorianCalendar fechaDeCorte, String clave, int tipoCuenta, Cliente titularDeCuenta) {
+        super(clave, tipoCuenta, titularDeCuenta);
         this.limiteDeRetiro = limiteDeRetiro;
+        this.fechaDeCorte = fechaDeCorte;
     }
 
     public float getLimiteDeRetiro() {
@@ -31,6 +32,11 @@ public class CuentaAhorro extends Cuenta {
 
     public void setLimiteDeRetiro(float limiteDeRetiro) {
         this.limiteDeRetiro = limiteDeRetiro;
+    }
+
+    @Override
+    public float calcularITF(float cantidad) {
+        throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
     }
     
     
