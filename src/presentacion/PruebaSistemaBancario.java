@@ -4,10 +4,12 @@
  */
 package presentacion;
 
-/**
- *
- * @author JuanMistery
- */
+
 public class PruebaSistemaBancario {
-    
+    public static void main(String[] args) {
+       
+    PresentacionSistemaBancario pantalla = new PresentacionSistemaBancario();
+    pantalla.setVisible(true);
+    pantalla.setLocationRelativeTo(null);
+    }
 }
