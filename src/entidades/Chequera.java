@@ -6,7 +6,7 @@ package entidades;
 
 /**
  *
- * @author ramos
+ * @author ramos-
  */
 public class Chequera {
     private int limiteCheques;
