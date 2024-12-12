@@ -32,15 +32,17 @@ import entidades.*;
     
     public int buscarPorApellido(String apellido) {
         Cuenta cuentaB;
+        Cliente clienteB;
         for(int i=0; i<listaCuentas.size(); i++) {
             cuentaB = listaCuentas.get(i);
+            clienteB=cuentaB.getTitularDeCuenta();
             switch(cuentaB.getTipoCuenta()) {
                 case 1: 
-                    if(((CuentaAhorro)cuentaB).getApellidos().compareToIgnoreCase(apellido)==0)
+                    if(clienteB.getApellidos().compareToIgnoreCase(apellido)==0)
                         return i;
                     break;
                 case 2: 
-                    if(((CuentaCorriente)cuentaB).getApellidos().compareToIgnoreCase(apellido)==0)
+                    if(clienteB.getApellidos().compareToIgnoreCase(apellido)==0)
                         return i;
                     break;
             }
