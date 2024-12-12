@@ -22,6 +22,7 @@ public class ListaClientes {
         if(cliente != null) {
             listaClientes.add(cliente);
             return true;
+            
         }
         return false;
     }
