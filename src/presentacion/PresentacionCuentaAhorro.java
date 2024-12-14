@@ -37,6 +37,12 @@ public class PresentacionCuentaAhorro extends javax.swing.JInternalFrame {
 
         lblContraseña.setText("CONTRASEÑA");
 
+        txtNdeCuenta.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                txtNdeCuentaActionPerformed(evt);
+            }
+        });
+
         lblInicioSesion.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
         lblInicioSesion.setText("INICIO DE SESION");
 
@@ -78,6 +84,10 @@ public class PresentacionCuentaAhorro extends javax.swing.JInternalFrame {
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
+
+    private void txtNdeCuentaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtNdeCuentaActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_txtNdeCuentaActionPerformed
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
