@@ -63,5 +63,26 @@ import entidades.*;
                 lista.add(cuenta);
         }
         return lista;
-    }               
+    }        
+    
+    public int buscarPorNumeroCuenta(String numero, int tipoCuenta) {
+        Cuenta cuentaB;
+        String numeroC = null;
+        
+        switch(tipoCuenta){
+            case 1: 
+                numeroC = "A" + numero;
+                break;
+            case 2: 
+                numeroC = "C"+numero;
+                break;
+        }
+        
+        for(int i=0; i<listaCuentas.size(); i++) {
+            cuentaB = listaCuentas.get(i);
+            if(cuentaB.getNumeroCuenta().compareToIgnoreCase(numeroC)==0)
+                return i;
+        }
+        return -1;
+    }
 }
