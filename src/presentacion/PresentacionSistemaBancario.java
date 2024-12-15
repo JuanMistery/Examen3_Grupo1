@@ -26,26 +26,85 @@ public class PresentacionSistemaBancario extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
-        jMenuBar1 = new javax.swing.JMenuBar();
-        jMenu1 = new javax.swing.JMenu();
-        jMenuItem2 = new javax.swing.JMenuItem();
-        jMenuItem1 = new javax.swing.JMenuItem();
+        mnbMenu = new javax.swing.JMenuBar();
         jMenu2 = new javax.swing.JMenu();
+        mnuCuenta = new javax.swing.JMenu();
+        mniInformacion = new javax.swing.JMenuItem();
+        mniEstadoCuenta = new javax.swing.JMenuItem();
+        mnuOperaciones = new javax.swing.JMenu();
+        mniDepositar = new javax.swing.JMenuItem();
+        mniRetirar = new javax.swing.JMenuItem();
+        mniTransferencia = new javax.swing.JMenuItem();
+        mniEmitirC = new javax.swing.JMenuItem();
+        mniCobrarC = new javax.swing.JMenuItem();
+        mniVerificarC = new javax.swing.JMenuItem();
+        mniDevolverC = new javax.swing.JMenuItem();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
-        jMenu1.setText("Clientes");
+        mnbMenu.add(jMenu2);
 
-        jMenuItem2.setText("Cliente Natural");
-        jMenu1.add(jMenuItem2);
+        mnuCuenta.setText("Cuenta");
 
-        jMenuItem1.setText("Cliente Jurídico ");
-        jMenu1.add(jMenuItem1);
+        mniInformacion.setText("Información");
+        mniInformacion.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                mniInformacionActionPerformed(evt);
+            }
+        });
+        mnuCuenta.add(mniInformacion);
 
-        jMenuBar1.add(jMenu1);
-        jMenuBar1.add(jMenu2);
+        mniEstadoCuenta.setText("Estado de Cuenta");
+        mniEstadoCuenta.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                mniEstadoCuentaActionPerformed(evt);
+            }
+        });
+        mnuCuenta.add(mniEstadoCuenta);
 
-        setJMenuBar(jMenuBar1);
+        mnbMenu.add(mnuCuenta);
+
+        mnuOperaciones.setText("Operaciones");
+
+        mniDepositar.setText("Depositar");
+        mniDepositar.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                mniDepositarActionPerformed(evt);
+            }
+        });
+        mnuOperaciones.add(mniDepositar);
+
+        mniRetirar.setText("Retirar");
+        mnuOperaciones.add(mniRetirar);
+
+        mniTransferencia.setText("transferencia");
+        mnuOperaciones.add(mniTransferencia);
+
+        mniEmitirC.setText("Emitir Cheques");
+        mnuOperaciones.add(mniEmitirC);
+
+        mniCobrarC.setText("Cobrar Cheques");
+        mnuOperaciones.add(mniCobrarC);
+
+        mniVerificarC.setText("Verificar Cheques");
+        mniVerificarC.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                mniVerificarCActionPerformed(evt);
+            }
+        });
+        mnuOperaciones.add(mniVerificarC);
+
+        mniDevolverC.setText("Devolver Cheques");
+        mniDevolverC.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                mniDevolverCActionPerformed(evt);
+            }
+        });
+        mnuOperaciones.add(mniDevolverC);
+
+        mnbMenu.add(mnuOperaciones);
+
+        setJMenuBar(mnbMenu);
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
@@ -61,16 +120,44 @@ public class PresentacionSistemaBancario extends javax.swing.JFrame {
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
+    private void mniInformacionActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_mniInformacionActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_mniInformacionActionPerformed
+
+    private void mniEstadoCuentaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_mniEstadoCuentaActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_mniEstadoCuentaActionPerformed
+
+    private void mniDepositarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_mniDepositarActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_mniDepositarActionPerformed
+
+    private void mniVerificarCActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_mniVerificarCActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_mniVerificarCActionPerformed
+
+    private void mniDevolverCActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_mniDevolverCActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_mniDevolverCActionPerformed
+
     /**
      * @param args the command line arguments
      */
   
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JMenu jMenu1;
     private javax.swing.JMenu jMenu2;
-    private javax.swing.JMenuBar jMenuBar1;
-    private javax.swing.JMenuItem jMenuItem1;
-    private javax.swing.JMenuItem jMenuItem2;
+    private javax.swing.JMenuBar mnbMenu;
+    private javax.swing.JMenuItem mniCobrarC;
+    private javax.swing.JMenuItem mniDepositar;
+    private javax.swing.JMenuItem mniDevolverC;
+    private javax.swing.JMenuItem mniEmitirC;
+    private javax.swing.JMenuItem mniEstadoCuenta;
+    private javax.swing.JMenuItem mniInformacion;
+    private javax.swing.JMenuItem mniRetirar;
+    private javax.swing.JMenuItem mniTransferencia;
+    private javax.swing.JMenuItem mniVerificarC;
+    private javax.swing.JMenu mnuCuenta;
+    private javax.swing.JMenu mnuOperaciones;
     // End of variables declaration//GEN-END:variables
 }
