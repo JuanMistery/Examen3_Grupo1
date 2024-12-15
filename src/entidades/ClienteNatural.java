@@ -10,13 +10,14 @@ import java.util.*;
  *
  * @author misterioso
  */
-public class ClienteNatural {
+public class ClienteNatural extends Cliente {
     private int tipoDeDocumentoDeIdentidad;
     private String documentoDeIdentidad;
     private String estadoCivil;
     private GregorianCalendar fechaNacimiento;
 
-    public ClienteNatural(int tipoDeDocumentoDeIdentidad, String documentoDeIdentidad, String estadoCivil, GregorianCalendar fechaNacimiento) {
+    public ClienteNatural(int tipoDeDocumentoDeIdentidad, String documentoDeIdentidad, String estadoCivil, GregorianCalendar fechaNacimiento, int tipoCliente, String nombres, String apellidos, String direccion, String telefono, String correoElectronico) {
+        super(tipoCliente, nombres, apellidos, direccion, telefono, correoElectronico);
         this.tipoDeDocumentoDeIdentidad = tipoDeDocumentoDeIdentidad;
         this.documentoDeIdentidad = documentoDeIdentidad;
         this.estadoCivil = estadoCivil;
