@@ -4,8 +4,7 @@
  */
 package adicionales;
 import java.awt.Image;
-import javax.swing.ImageIcon;
-import javax.swing.JLabel;
+import javax.swing.*;
 /**
  *
  * @author ramos
@@ -15,4 +14,9 @@ public class Escalar {
         label.setIcon(new ImageIcon(new ImageIcon(getClass().getResource(rutaImagen)).getImage()
                 .getScaledInstance(label.getWidth(), label.getHeight(), Image.SCALE_DEFAULT)));
     }
+    
+    public void escalarBoton(JButton boton, String rutaImagen) {
+    boton.setIcon(new ImageIcon(new ImageIcon(getClass().getResource(rutaImagen)).getImage()
+            .getScaledInstance(boton.getWidth(), boton.getHeight(), Image.SCALE_SMOOTH)));
+}
 }

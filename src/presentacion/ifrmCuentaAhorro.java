@@ -18,7 +18,7 @@ public class ifrmCuentaAhorro extends javax.swing.JInternalFrame {
      */
     public ifrmCuentaAhorro() {
         initComponents();
-        escalar.escalarLabel(lblNotificacion, "imagenes/image-removebg-previw.png");
+        escalar.escalarBoton(btnNotificacion, "imagenes/image-removebg-previw.png");
         escalar.escalarLabel(lblIcon, "imagenes/logo_interbank.jpg");
         
     }
@@ -34,8 +34,8 @@ public class ifrmCuentaAhorro extends javax.swing.JInternalFrame {
 
         panBienvenida = new javax.swing.JPanel();
         lblCuentaAhorro = new javax.swing.JLabel();
-        lblNotificacion = new javax.swing.JLabel();
         lblIcon = new javax.swing.JLabel();
+        btnNotificacion = new javax.swing.JButton();
         jPanel1 = new javax.swing.JPanel();
         lblSaldoActual = new javax.swing.JLabel();
         jLabel1 = new javax.swing.JLabel();
@@ -73,9 +73,9 @@ public class ifrmCuentaAhorro extends javax.swing.JInternalFrame {
                 .addComponent(lblIcon, javax.swing.GroupLayout.PREFERRED_SIZE, 90, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 98, Short.MAX_VALUE)
                 .addComponent(lblCuentaAhorro, javax.swing.GroupLayout.PREFERRED_SIZE, 360, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(100, 100, 100)
-                .addComponent(lblNotificacion, javax.swing.GroupLayout.PREFERRED_SIZE, 74, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(28, 28, 28))
+                .addGap(101, 101, 101)
+                .addComponent(btnNotificacion)
+                .addGap(29, 29, 29))
         );
         panBienvenidaLayout.setVerticalGroup(
             panBienvenidaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -83,13 +83,13 @@ public class ifrmCuentaAhorro extends javax.swing.JInternalFrame {
                 .addContainerGap(14, Short.MAX_VALUE)
                 .addGroup(panBienvenidaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, panBienvenidaLayout.createSequentialGroup()
-                        .addGroup(panBienvenidaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                            .addComponent(lblNotificacion, javax.swing.GroupLayout.PREFERRED_SIZE, 62, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(lblCuentaAhorro, javax.swing.GroupLayout.PREFERRED_SIZE, 41, javax.swing.GroupLayout.PREFERRED_SIZE))
-                        .addGap(20, 20, 20))
-                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, panBienvenidaLayout.createSequentialGroup()
                         .addComponent(lblIcon, javax.swing.GroupLayout.PREFERRED_SIZE, 80, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addContainerGap())))
+                        .addContainerGap())
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, panBienvenidaLayout.createSequentialGroup()
+                        .addGroup(panBienvenidaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(btnNotificacion, javax.swing.GroupLayout.PREFERRED_SIZE, 72, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(lblCuentaAhorro, javax.swing.GroupLayout.PREFERRED_SIZE, 41, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addGap(10, 10, 10))))
         );
 
         getContentPane().add(panBienvenida, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 769, 100));
@@ -130,7 +130,7 @@ public class ifrmCuentaAhorro extends javax.swing.JInternalFrame {
                                 .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 87, javax.swing.GroupLayout.PREFERRED_SIZE)
                                 .addGap(18, 18, 18)
                                 .addComponent(btnOcultar, javax.swing.GroupLayout.PREFERRED_SIZE, 53, javax.swing.GroupLayout.PREFERRED_SIZE)))))
-                .addContainerGap(205, Short.MAX_VALUE))
+                .addContainerGap(264, Short.MAX_VALUE))
         );
         jPanel1Layout.setVerticalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -214,6 +214,7 @@ public class ifrmCuentaAhorro extends javax.swing.JInternalFrame {
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JButton btnNotificacion;
     private javax.swing.JButton btnOcultar;
     private javax.swing.JButton btnSalir;
     private javax.swing.JLabel jLabel1;
@@ -223,7 +224,6 @@ public class ifrmCuentaAhorro extends javax.swing.JInternalFrame {
     private javax.swing.JLabel lblCuentaAhorro;
     private javax.swing.JLabel lblIcon;
     private javax.swing.JLabel lblNombres;
-    private javax.swing.JLabel lblNotificacion;
     private javax.swing.JLabel lblSaldoActual;
     private javax.swing.JMenuBar mnbMenu;
     private javax.swing.JMenuItem mniDepositar;
