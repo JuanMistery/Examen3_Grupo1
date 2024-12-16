@@ -158,6 +158,27 @@ public abstract class Cuenta implements ImptoTransaccionesFinancieras{
         this.operaciones = operaciones;
     }
     
+    public boolean validarClave(String correoElectronico, String clave)
+    {
+        int tipo=titularDeCuenta.getTipoCliente();
+        if(tipo==1)
+        {
+            if(this.clave==clave&&titularDeCuenta.getCorreoElectronico()==correoElectronico)
+            {
+                return true;
+            }
+            return false;
+        }
+        else
+        {
+            if(this.clave==clave&&((ClienteJuridico)titularDeCuenta).getCorreoElectronicoJuridico()==correoElectronico)
+            {
+                return true;
+            }
+            return false;
+        }
+    }
+    
     @Override
     public String toString() {
         return "\n\tTipo de cuenta: " + (tipoCuenta==1?"Cuenta de Ahorro":"Cuenta Corriente") +
