@@ -153,7 +153,7 @@ public class ifrmCuentaAhorro extends javax.swing.JInternalFrame {
                 .addGap(131, 131, 131))
         );
 
-        getContentPane().add(jPanel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 80, -1, 500));
+        getContentPane().add(jPanel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 190, -1, 500));
 
         mnbMenu.add(jMenu2);
 
