@@ -44,19 +44,16 @@
                   <Group type="103" groupAlignment="1" attributes="0">
                       <Component id="btnSalir" min="-2" max="-2" attributes="0"/>
                       <Group type="103" alignment="1" groupAlignment="0" max="-2" attributes="0">
-                          <Component id="txtClaveCuenta" max="32767" attributes="0"/>
-                          <Component id="txtNroCuenta" alignment="0" max="32767" attributes="0"/>
-                          <Component id="txtDocumentacion" alignment="0" max="32767" attributes="0"/>
+                          <Component id="txtClave" max="32767" attributes="0"/>
+                          <Component id="txtNumeroDeCuenta" alignment="0" max="32767" attributes="0"/>
+                          <Component id="txtCorreoElectronico" alignment="0" max="32767" attributes="0"/>
                           <Group type="102" alignment="1" attributes="0">
                               <Component id="btnRegistrar" min="-2" pref="150" max="-2" attributes="0"/>
                               <EmptySpace pref="57" max="32767" attributes="0"/>
                               <Component id="btnIngresar" min="-2" pref="150" max="-2" attributes="0"/>
                           </Group>
-                          <Group type="102" alignment="0" attributes="0">
-                              <Component id="lblDocumentacion" min="-2" max="-2" attributes="0"/>
-                              <EmptySpace min="-2" pref="44" max="-2" attributes="0"/>
-                          </Group>
-                          <Component id="lblClaveCuenta" min="-2" max="-2" attributes="0"/>
+                          <Component id="lblCorreoElectronico" alignment="0" min="-2" max="-2" attributes="0"/>
+                          <Component id="lblClave" min="-2" max="-2" attributes="0"/>
                           <Component id="lblNroCuenta" min="-2" max="-2" attributes="0"/>
                       </Group>
                   </Group>
@@ -68,17 +65,17 @@
           <Group type="103" groupAlignment="0" attributes="0">
               <Group type="102" alignment="1" attributes="0">
                   <EmptySpace pref="97" max="32767" attributes="0"/>
-                  <Component id="lblDocumentacion" min="-2" max="-2" attributes="0"/>
+                  <Component id="lblCorreoElectronico" min="-2" max="-2" attributes="0"/>
                   <EmptySpace type="separate" max="-2" attributes="0"/>
-                  <Component id="txtDocumentacion" min="-2" max="-2" attributes="0"/>
+                  <Component id="txtCorreoElectronico" min="-2" max="-2" attributes="0"/>
                   <EmptySpace type="unrelated" max="-2" attributes="0"/>
                   <Component id="lblNroCuenta" min="-2" max="-2" attributes="0"/>
                   <EmptySpace type="unrelated" max="-2" attributes="0"/>
-                  <Component id="txtNroCuenta" min="-2" max="-2" attributes="0"/>
+                  <Component id="txtNumeroDeCuenta" min="-2" max="-2" attributes="0"/>
                   <EmptySpace type="unrelated" max="-2" attributes="0"/>
-                  <Component id="lblClaveCuenta" min="-2" max="-2" attributes="0"/>
+                  <Component id="lblClave" min="-2" max="-2" attributes="0"/>
                   <EmptySpace max="-2" attributes="0"/>
-                  <Component id="txtClaveCuenta" min="-2" max="-2" attributes="0"/>
+                  <Component id="txtClave" min="-2" max="-2" attributes="0"/>
                   <EmptySpace min="-2" pref="31" max="-2" attributes="0"/>
                   <Group type="103" groupAlignment="3" attributes="0">
                       <Component id="btnIngresar" alignment="3" min="-2" max="-2" attributes="0"/>
@@ -92,10 +89,7 @@
         </DimensionLayout>
       </Layout>
       <SubComponents>
-        <Component class="javax.swing.JTextField" name="txtDocumentacion">
-          <Events>
-            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="txtDocumentacionActionPerformed"/>
-          </Events>
+        <Component class="javax.swing.JTextField" name="txtCorreoElectronico">
         </Component>
         <Component class="javax.swing.JButton" name="btnRegistrar">
           <Properties>
@@ -105,9 +99,9 @@
             <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="btnRegistrarActionPerformed"/>
           </Events>
         </Component>
-        <Component class="javax.swing.JLabel" name="lblDocumentacion">
+        <Component class="javax.swing.JLabel" name="lblCorreoElectronico">
           <Properties>
-            <Property name="text" type="java.lang.String" value="Documentacion"/>
+            <Property name="text" type="java.lang.String" value="Correo Electronico"/>
           </Properties>
         </Component>
         <Component class="javax.swing.JButton" name="btnSalir">
@@ -118,15 +112,9 @@
             <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="btnSalirActionPerformed"/>
           </Events>
         </Component>
-        <Component class="javax.swing.JTextField" name="txtNroCuenta">
-          <Events>
-            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="txtNroCuentaActionPerformed"/>
-          </Events>
+        <Component class="javax.swing.JTextField" name="txtNumeroDeCuenta">
         </Component>
-        <Component class="javax.swing.JTextField" name="txtClaveCuenta">
-          <Events>
-            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="txtClaveCuentaActionPerformed"/>
-          </Events>
+        <Component class="javax.swing.JTextField" name="txtClave">
         </Component>
         <Component class="javax.swing.JButton" name="btnIngresar">
           <Properties>
@@ -141,7 +129,7 @@
             <Property name="text" type="java.lang.String" value="Numero  De Cuenta"/>
           </Properties>
         </Component>
-        <Component class="javax.swing.JLabel" name="lblClaveCuenta">
+        <Component class="javax.swing.JLabel" name="lblClave">
           <Properties>
             <Property name="text" type="java.lang.String" value="Clave De 6 Digitos"/>
           </Properties>

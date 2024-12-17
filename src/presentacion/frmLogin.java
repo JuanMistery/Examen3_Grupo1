@@ -4,6 +4,9 @@
  */
 package presentacion;
 
+import entidades.*;
+import datos.*;
+
 /**
  *
  * @author USUARIO
@@ -27,24 +30,18 @@ public class frmLogin extends javax.swing.JFrame {
     private void initComponents() {
 
         jDesktopPane1 = new javax.swing.JDesktopPane();
-        txtDocumentacion = new javax.swing.JTextField();
+        txtCorreoElectronico = new javax.swing.JTextField();
         btnRegistrar = new javax.swing.JButton();
-        lblDocumentacion = new javax.swing.JLabel();
+        lblCorreoElectronico = new javax.swing.JLabel();
         btnSalir = new javax.swing.JButton();
-        txtNroCuenta = new javax.swing.JTextField();
-        txtClaveCuenta = new javax.swing.JTextField();
+        txtNumeroDeCuenta = new javax.swing.JTextField();
+        txtClave = new javax.swing.JTextField();
         btnIngresar = new javax.swing.JButton();
         lblNroCuenta = new javax.swing.JLabel();
-        lblClaveCuenta = new javax.swing.JLabel();
+        lblClave = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setTitle("Inicio de Sesion");
-
-        txtDocumentacion.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                txtDocumentacionActionPerformed(evt);
-            }
-        });
 
         btnRegistrar.setText("Registrar");
         btnRegistrar.addActionListener(new java.awt.event.ActionListener() {
@@ -53,24 +50,12 @@ public class frmLogin extends javax.swing.JFrame {
             }
         });
 
-        lblDocumentacion.setText("Documentacion");
+        lblCorreoElectronico.setText("Correo Electronico");
 
         btnSalir.setText("salir");
         btnSalir.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btnSalirActionPerformed(evt);
-            }
-        });
-
-        txtNroCuenta.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                txtNroCuentaActionPerformed(evt);
-            }
-        });
-
-        txtClaveCuenta.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                txtClaveCuentaActionPerformed(evt);
             }
         });
 
@@ -83,17 +68,17 @@ public class frmLogin extends javax.swing.JFrame {
 
         lblNroCuenta.setText("Numero  De Cuenta");
 
-        lblClaveCuenta.setText("Clave De 6 Digitos");
+        lblClave.setText("Clave De 6 Digitos");
 
-        jDesktopPane1.setLayer(txtDocumentacion, javax.swing.JLayeredPane.DEFAULT_LAYER);
+        jDesktopPane1.setLayer(txtCorreoElectronico, javax.swing.JLayeredPane.DEFAULT_LAYER);
         jDesktopPane1.setLayer(btnRegistrar, javax.swing.JLayeredPane.DEFAULT_LAYER);
-        jDesktopPane1.setLayer(lblDocumentacion, javax.swing.JLayeredPane.DEFAULT_LAYER);
+        jDesktopPane1.setLayer(lblCorreoElectronico, javax.swing.JLayeredPane.DEFAULT_LAYER);
         jDesktopPane1.setLayer(btnSalir, javax.swing.JLayeredPane.DEFAULT_LAYER);
-        jDesktopPane1.setLayer(txtNroCuenta, javax.swing.JLayeredPane.DEFAULT_LAYER);
-        jDesktopPane1.setLayer(txtClaveCuenta, javax.swing.JLayeredPane.DEFAULT_LAYER);
+        jDesktopPane1.setLayer(txtNumeroDeCuenta, javax.swing.JLayeredPane.DEFAULT_LAYER);
+        jDesktopPane1.setLayer(txtClave, javax.swing.JLayeredPane.DEFAULT_LAYER);
         jDesktopPane1.setLayer(btnIngresar, javax.swing.JLayeredPane.DEFAULT_LAYER);
         jDesktopPane1.setLayer(lblNroCuenta, javax.swing.JLayeredPane.DEFAULT_LAYER);
-        jDesktopPane1.setLayer(lblClaveCuenta, javax.swing.JLayeredPane.DEFAULT_LAYER);
+        jDesktopPane1.setLayer(lblClave, javax.swing.JLayeredPane.DEFAULT_LAYER);
 
         javax.swing.GroupLayout jDesktopPane1Layout = new javax.swing.GroupLayout(jDesktopPane1);
         jDesktopPane1.setLayout(jDesktopPane1Layout);
@@ -104,35 +89,36 @@ public class frmLogin extends javax.swing.JFrame {
                 .addGroup(jDesktopPane1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
                     .addComponent(btnSalir)
                     .addGroup(jDesktopPane1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                        .addComponent(txtClaveCuenta)
-                        .addComponent(txtNroCuenta)
-                        .addComponent(txtDocumentacion)
+                        .addComponent(txtClave)
+                        .addComponent(txtNumeroDeCuenta)
+                        .addComponent(txtCorreoElectronico)
                         .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jDesktopPane1Layout.createSequentialGroup()
                             .addComponent(btnRegistrar, javax.swing.GroupLayout.PREFERRED_SIZE, 150, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 57, Short.MAX_VALUE)
                             .addComponent(btnIngresar, javax.swing.GroupLayout.PREFERRED_SIZE, 150, javax.swing.GroupLayout.PREFERRED_SIZE))
                         .addGroup(jDesktopPane1Layout.createSequentialGroup()
-                            .addComponent(lblDocumentacion)
-                            .addGap(44, 44, 44))
-                        .addComponent(lblClaveCuenta)
-                        .addComponent(lblNroCuenta)))
+                            .addGroup(jDesktopPane1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                .addComponent(lblCorreoElectronico)
+                                .addComponent(lblClave)
+                                .addComponent(lblNroCuenta))
+                            .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED))))
                 .addGap(15, 15, 15))
         );
         jDesktopPane1Layout.setVerticalGroup(
             jDesktopPane1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jDesktopPane1Layout.createSequentialGroup()
                 .addContainerGap(97, Short.MAX_VALUE)
-                .addComponent(lblDocumentacion)
+                .addComponent(lblCorreoElectronico)
                 .addGap(18, 18, 18)
-                .addComponent(txtDocumentacion, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(txtCorreoElectronico, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addComponent(lblNroCuenta)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addComponent(txtNroCuenta, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(txtNumeroDeCuenta, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addComponent(lblClaveCuenta)
+                .addComponent(lblClave)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(txtClaveCuenta, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(txtClave, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(31, 31, 31)
                 .addGroup(jDesktopPane1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(btnIngresar)
@@ -157,28 +143,38 @@ public class frmLogin extends javax.swing.JFrame {
         setLocationRelativeTo(null);
     }// </editor-fold>//GEN-END:initComponents
 
-    private void txtNroCuentaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtNroCuentaActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_txtNroCuentaActionPerformed
-
-    private void txtClaveCuentaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtClaveCuentaActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_txtClaveCuentaActionPerformed
-
-    private void txtDocumentacionActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtDocumentacionActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_txtDocumentacionActionPerformed
-
     private void btnRegistrarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnRegistrarActionPerformed
-        // TODO add your handling code here:
+        frmRegistrarCuenta FrmRegistrarCuenta = new frmRegistrarCuenta();
+        FrmRegistrarCuenta.setLocationRelativeTo(null);
+        FrmRegistrarCuenta.setVisible(true);
+        this.dispose();
     }//GEN-LAST:event_btnRegistrarActionPerformed
 
     private void btnSalirActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnSalirActionPerformed
-        // TODO add your handling code here:
+        System.exit(0);
     }//GEN-LAST:event_btnSalirActionPerformed
 
     private void btnIngresarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnIngresarActionPerformed
-        // TODO add your handling code here:
+        String correoElectronico,clave, numeroDeCuenta,archivo;
+        archivo="DatosCuentas.dat";
+        ListaCuentas listaC = ListaCuentas.cargarCuentas(archivo);
+        Cliente cliente;
+        Cuenta cuenta;
+        correoElectronico=txtCorreoElectronico.getText();
+        clave=txtClave.getText();
+        numeroDeCuenta=txtNumeroDeCuenta.getText();
+        cuenta=listaC.obtenerCuenta(listaC.buscarPorNumeroCuenta(numeroDeCuenta));
+        if(cuenta.validarClave(correoElectronico, clave))
+        {
+            frmPrincipal FrmPrincipal= new frmPrincipal(cuenta);
+            FrmPrincipal.setLocationRelativeTo(null);
+            FrmPrincipal.setVisible(true);
+            this.dispose();
+        }
+        else
+        {
+            
+        }
     }//GEN-LAST:event_btnIngresarActionPerformed
 
     /**
@@ -223,11 +219,11 @@ public class frmLogin extends javax.swing.JFrame {
     private javax.swing.JButton btnRegistrar;
     private javax.swing.JButton btnSalir;
     private javax.swing.JDesktopPane jDesktopPane1;
-    private javax.swing.JLabel lblClaveCuenta;
-    private javax.swing.JLabel lblDocumentacion;
+    private javax.swing.JLabel lblClave;
+    private javax.swing.JLabel lblCorreoElectronico;
     private javax.swing.JLabel lblNroCuenta;
-    private javax.swing.JTextField txtClaveCuenta;
-    private javax.swing.JTextField txtDocumentacion;
-    private javax.swing.JTextField txtNroCuenta;
+    private javax.swing.JTextField txtClave;
+    private javax.swing.JTextField txtCorreoElectronico;
+    private javax.swing.JTextField txtNumeroDeCuenta;
     // End of variables declaration//GEN-END:variables
 }
