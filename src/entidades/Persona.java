@@ -8,7 +8,7 @@ package entidades;
  *
  * @author JuanMistery
  */
-public abstract class Persona {
+public class Persona {
     private String nombres;
     private String apellidos;
     private String direccion;

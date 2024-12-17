@@ -33,11 +33,5 @@ public class CuentaAhorro extends Cuenta {
     public void setLimiteDeRetiro(float limiteDeRetiro) {
         this.limiteDeRetiro = limiteDeRetiro;
     }
-
-    @Override
-    public float calcularITF(float cantidad) {
-        throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
-    }
-    
     
 }
