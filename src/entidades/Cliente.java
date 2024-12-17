@@ -11,6 +11,10 @@ package entidades;
 public class Cliente extends Persona{
     private int tipoCliente;
 
+    public Cliente()
+    {
+    }
+    
     public Cliente(int tipoCliente, String nombres, String apellidos, String direccion, String telefono, String correoElectronico) {
         super(nombres, apellidos, direccion, telefono, correoElectronico);
         this.tipoCliente = tipoCliente;
