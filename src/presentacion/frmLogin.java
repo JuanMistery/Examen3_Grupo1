@@ -146,10 +146,6 @@ public class frmLogin extends javax.swing.JFrame {
     private void btnRegistrarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnRegistrarActionPerformed
         Cuenta cuenta;
         cuenta = new Cuenta() {
-            @Override
-            public float calcularITF(float cantidad) {
-                throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
-            }
         };
         frmRegistrarCuenta FrmRegistrarCuenta = new frmRegistrarCuenta(cuenta);
         FrmRegistrarCuenta.setLocationRelativeTo(null);
