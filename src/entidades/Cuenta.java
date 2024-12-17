@@ -22,6 +22,10 @@ public abstract class Cuenta implements ImptoTransaccionesFinancieras{
     ArrayList<Operaciones> operaciones = new ArrayList<Operaciones>();
     private static int totalCuentasAhorro = 0;
     private static int totalCuentasCorriente = 0;
+
+    public Cuenta()
+    {
+    }
     
     public Cuenta (float saldoCuenta, String clave, int tipoCuenta, Cliente titularDeCuenta) { 
         this.tipoCuenta = tipoCuenta;
@@ -29,7 +33,6 @@ public abstract class Cuenta implements ImptoTransaccionesFinancieras{
         this.clave = clave;
         this.titularDeCuenta = titularDeCuenta;
         fechaCreacion = new GregorianCalendar();
-        
         if(tipoCuenta == 1)
             ++totalCuentasAhorro;
         else
