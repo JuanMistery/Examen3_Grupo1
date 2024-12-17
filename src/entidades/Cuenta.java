@@ -183,6 +183,11 @@ public abstract class Cuenta implements ImptoTransaccionesFinancieras{
     }
     
     @Override
+     public float calcularITF(float cantidad) {
+        return cantidad*ITF;
+    }
+    
+    @Override
     public String toString() {
         return "\n\tTipo de cuenta: " + (tipoCuenta==1?"Cuenta de Ahorro":"Cuenta Corriente") +
                "\n\tNumero de cuenta: " + getNumeroCuenta() + 
