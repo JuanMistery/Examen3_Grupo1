@@ -18,9 +18,9 @@
       <Group type="103" groupAlignment="0" attributes="0">
           <Group type="102" alignment="0" attributes="0">
               <EmptySpace min="-2" pref="23" max="-2" attributes="0"/>
-              <Component id="lblLimiteDeAhorro" min="-2" max="-2" attributes="0"/>
-              <EmptySpace pref="84" max="32767" attributes="0"/>
-              <Component id="txtLimiteDeAhorro" min="-2" pref="168" max="-2" attributes="0"/>
+              <Component id="lblLimiteRetiro" min="-2" max="-2" attributes="0"/>
+              <EmptySpace pref="89" max="32767" attributes="0"/>
+              <Component id="txtLimiteRetiro" min="-2" pref="168" max="-2" attributes="0"/>
               <EmptySpace min="-2" pref="30" max="-2" attributes="0"/>
           </Group>
           <Component id="panForBeneficiarios" alignment="0" pref="400" max="32767" attributes="0"/>
@@ -31,8 +31,8 @@
           <Group type="102" alignment="0" attributes="0">
               <EmptySpace max="-2" attributes="0"/>
               <Group type="103" groupAlignment="3" attributes="0">
-                  <Component id="lblLimiteDeAhorro" alignment="3" min="-2" max="-2" attributes="0"/>
-                  <Component id="txtLimiteDeAhorro" alignment="3" min="-2" max="-2" attributes="0"/>
+                  <Component id="lblLimiteRetiro" alignment="3" min="-2" max="-2" attributes="0"/>
+                  <Component id="txtLimiteRetiro" alignment="3" min="-2" max="-2" attributes="0"/>
               </Group>
               <EmptySpace type="unrelated" max="-2" attributes="0"/>
               <Component id="panForBeneficiarios" pref="210" max="32767" attributes="0"/>
@@ -41,12 +41,12 @@
     </DimensionLayout>
   </Layout>
   <SubComponents>
-    <Component class="javax.swing.JLabel" name="lblLimiteDeAhorro">
+    <Component class="javax.swing.JLabel" name="lblLimiteRetiro">
       <Properties>
-        <Property name="text" type="java.lang.String" value="Limite de Ahorro: "/>
+        <Property name="text" type="java.lang.String" value="Limite de Retiro: "/>
       </Properties>
     </Component>
-    <Component class="javax.swing.JTextField" name="txtLimiteDeAhorro">
+    <Component class="javax.swing.JTextField" name="txtLimiteRetiro">
     </Component>
     <Container class="javax.swing.JPanel" name="panForBeneficiarios">
       <Properties>

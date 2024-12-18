@@ -19,12 +19,12 @@ public class panCuentaCorriente extends javax.swing.JPanel {
         initComponents();
     }
 
-    public JTextField getTxtLimiteDeEmision() {
-        return txtLimiteDeEmision;
+    public String getTxtLimiteDeEmision() {
+        return txtLimiteDeEmision.getText();
     }
 
-    public JTextField getTxtLimiteDeSobregiro() {
-        return txtLimiteDeSobregiro;
+    public String getTxtLimiteDeSobregiro() {
+        return txtLimiteDeSobregiro.getText();
     }
     
     /**
