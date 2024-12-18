@@ -6,6 +6,7 @@ package presentacion;
 
 import java.awt.*;
 import entidades.*;
+import java.util.ArrayList;
 
 /**
  *
@@ -14,6 +15,9 @@ import entidades.*;
 public class frmRegistrarCuenta extends javax.swing.JFrame {
 
     private CardLayout cardLayout;
+    private panCuentaAhorro PanCuentaAhorro;
+    private panCuentaCorriente PanCuentaCorriente;
+    private Cuenta cuentaB;
     /**
      * Creates new form RegistrarCuenta
      */
@@ -21,8 +25,8 @@ public class frmRegistrarCuenta extends javax.swing.JFrame {
         initComponents();
         cardLayout = new CardLayout();
         panDatosUnicos.setLayout(cardLayout);
-        panCuentaAhorro PanCuentaAhorro = new panCuentaAhorro();
-        panCuentaCorriente PanCuentaCorriente = new panCuentaCorriente();
+        PanCuentaAhorro = new panCuentaAhorro();
+        PanCuentaCorriente = new panCuentaCorriente();
         panDatosUnicos.add(PanCuentaAhorro, "Cuenta Ahorro");
         panDatosUnicos.add(PanCuentaCorriente, "Cuenta Corriente");
     }
@@ -41,14 +45,16 @@ public class frmRegistrarCuenta extends javax.swing.JFrame {
         btnSiguiente = new javax.swing.JButton();
         btnAtras = new javax.swing.JButton();
         panDatosUnicos = new javax.swing.JPanel(cardLayout);
-        jLabel1 = new javax.swing.JLabel();
-        jLabel2 = new javax.swing.JLabel();
-        jLabel3 = new javax.swing.JLabel();
-        jTextField1 = new javax.swing.JTextField();
+        lblTipoCuenta = new javax.swing.JLabel();
+        lblSaldo = new javax.swing.JLabel();
+        lblMonedaCuenta = new javax.swing.JLabel();
+        txtSaldo = new javax.swing.JTextField();
         cmbMoneda = new javax.swing.JComboBox<>();
-        jLabel4 = new javax.swing.JLabel();
-        jLabel5 = new javax.swing.JLabel();
-        jComboBox1 = new javax.swing.JComboBox<>();
+        lblTipoCliente = new javax.swing.JLabel();
+        lblTipoDeInteres = new javax.swing.JLabel();
+        cmbTipoInteres = new javax.swing.JComboBox<>();
+        lblClave = new javax.swing.JLabel();
+        txtClave = new javax.swing.JTextField();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -60,13 +66,13 @@ public class frmRegistrarCuenta extends javax.swing.JFrame {
         });
 
         cmbTipoCliente.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Cliente Natural", "Cliente Juridico" }));
-        cmbTipoCliente.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                cmbTipoClienteActionPerformed(evt);
-            }
-        });
 
         btnSiguiente.setText("Siquiente");
+        btnSiguiente.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnSiguienteActionPerformed(evt);
+            }
+        });
 
         btnAtras.setText("Atras");
         btnAtras.addActionListener(new java.awt.event.ActionListener() {
@@ -89,19 +95,21 @@ public class frmRegistrarCuenta extends javax.swing.JFrame {
             .addGap(0, 240, Short.MAX_VALUE)
         );
 
-        jLabel1.setText("Tipo de Cuenta");
+        lblTipoCuenta.setText("Tipo de Cuenta");
 
-        jLabel2.setText("Saldo Inicial:");
+        lblSaldo.setText("Saldo Inicial:");
 
-        jLabel3.setText("Moneda de la Cuenta:");
+        lblMonedaCuenta.setText("Moneda de la Cuenta:");
 
         cmbMoneda.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Soles", "Dolares", "Euros" }));
 
-        jLabel4.setText("Tipo de Cliente");
+        lblTipoCliente.setText("Tipo de Cliente");
 
-        jLabel5.setText("Tipo de Interes");
+        lblTipoDeInteres.setText("Tipo de Interes");
 
-        jComboBox1.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Simple", "Compuesto" }));
+        cmbTipoInteres.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Simple", "Compuesto" }));
+
+        lblClave.setText("Clave;");
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
@@ -115,28 +123,30 @@ public class frmRegistrarCuenta extends javax.swing.JFrame {
                     .addGroup(layout.createSequentialGroup()
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addGroup(layout.createSequentialGroup()
-                                .addGap(123, 123, 123)
-                                .addComponent(btnSiguiente, javax.swing.GroupLayout.PREFERRED_SIZE, 200, javax.swing.GroupLayout.PREFERRED_SIZE))
-                            .addGroup(layout.createSequentialGroup()
                                 .addGap(16, 16, 16)
                                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                                     .addComponent(panDatosUnicos, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                                     .addGroup(layout.createSequentialGroup()
+                                        .addComponent(lblTipoCliente, javax.swing.GroupLayout.PREFERRED_SIZE, 124, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                        .addComponent(cmbTipoCliente, javax.swing.GroupLayout.PREFERRED_SIZE, 250, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                    .addGroup(layout.createSequentialGroup()
                                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
-                                            .addComponent(jLabel5, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                            .addComponent(jLabel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                            .addComponent(jLabel2, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                            .addComponent(jLabel3, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, 125, Short.MAX_VALUE))
+                                            .addComponent(lblTipoDeInteres, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                            .addComponent(lblTipoCuenta, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                            .addComponent(lblSaldo, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                            .addComponent(lblMonedaCuenta, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, 125, Short.MAX_VALUE)
+                                            .addComponent(lblClave, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                                         .addGap(25, 25, 25)
                                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                                            .addComponent(txtClave)
                                             .addComponent(cmbTipoCuenta, 0, 250, Short.MAX_VALUE)
-                                            .addComponent(jTextField1)
+                                            .addComponent(txtSaldo)
                                             .addComponent(cmbMoneda, 0, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                            .addComponent(jComboBox1, 0, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
-                                    .addGroup(layout.createSequentialGroup()
-                                        .addComponent(jLabel4, javax.swing.GroupLayout.PREFERRED_SIZE, 124, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                        .addComponent(cmbTipoCliente, javax.swing.GroupLayout.PREFERRED_SIZE, 250, javax.swing.GroupLayout.PREFERRED_SIZE)))))
+                                            .addComponent(cmbTipoInteres, 0, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))))
+                            .addGroup(layout.createSequentialGroup()
+                                .addGap(112, 112, 112)
+                                .addComponent(btnSiguiente, javax.swing.GroupLayout.PREFERRED_SIZE, 200, javax.swing.GroupLayout.PREFERRED_SIZE)))
                         .addGap(0, 12, Short.MAX_VALUE)))
                 .addContainerGap())
         );
@@ -145,31 +155,35 @@ public class frmRegistrarCuenta extends javax.swing.JFrame {
             .addGroup(layout.createSequentialGroup()
                 .addGap(57, 57, 57)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jLabel1)
+                    .addComponent(lblTipoCuenta)
                     .addComponent(cmbTipoCuenta, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jLabel2)
-                    .addComponent(jTextField1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(lblSaldo)
+                    .addComponent(txtSaldo, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jLabel3)
+                    .addComponent(lblMonedaCuenta)
                     .addComponent(cmbMoneda, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(18, 18, 18)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jLabel5)
-                    .addComponent(jComboBox1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(panDatosUnicos, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(lblTipoDeInteres)
+                    .addComponent(cmbTipoInteres, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jLabel4)
+                    .addComponent(lblClave)
+                    .addComponent(txtClave, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 18, Short.MAX_VALUE)
+                .addComponent(panDatosUnicos, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(lblTipoCliente)
                     .addComponent(cmbTipoCliente, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(18, 18, 18)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(btnSiguiente, javax.swing.GroupLayout.PREFERRED_SIZE, 36, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(9, 9, 9)
+                .addGap(4, 4, 4)
                 .addComponent(btnAtras)
-                .addContainerGap())
+                .addGap(18, 18, 18))
         );
 
         pack();
@@ -181,17 +195,46 @@ public class frmRegistrarCuenta extends javax.swing.JFrame {
         cardLayout.show(panDatosUnicos,itemSeleccionado);
     }//GEN-LAST:event_cmbTipoCuentaActionPerformed
 
-    private void cmbTipoClienteActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_cmbTipoClienteActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_cmbTipoClienteActionPerformed
-
     private void btnAtrasActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnAtrasActionPerformed
-        // TODO add your handling code here:
+        frmLogin FrmLogin = new frmLogin();
+        FrmLogin.setVisible(true);
+        this.dispose();
     }//GEN-LAST:event_btnAtrasActionPerformed
 
-    /**
-     * @param args the command line arguments
-     */
+    private void btnSiguienteActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnSiguienteActionPerformed
+        float saldo=Float.parseFloat(txtSaldo.getText());
+        String clave = txtClave.getText();
+        int tipoMoneda=cmbMoneda.getSelectedIndex()+1;
+        int tipoInteres=cmbTipoInteres.getSelectedIndex()+1;
+        int tipoCuenta=cmbTipoCuenta.getSelectedIndex()+1;
+        Cliente cliente= new Cliente();
+        if(tipoCuenta==1)
+        {
+            float LimiteRetiro = Float.parseFloat(PanCuentaAhorro.getTxtLimiteRetiro());
+            ArrayList<Persona> listaP = PanCuentaAhorro.getListaPersona();
+            cuentaB= new CuentaAhorro(LimiteRetiro,listaP,saldo,clave,cliente,tipoInteres,tipoMoneda);
+        }
+        else
+        {
+            float LimiteDeGiro=Float.parseFloat(PanCuentaCorriente.getTxtLimiteDeSobregiro());
+            int LimiteDeCheques=Integer.parseInt(PanCuentaCorriente.getTxtLimiteDeEmision());
+            cuentaB = new CuentaCorriente(LimiteDeGiro,LimiteDeCheques,saldo,clave,cliente,tipoInteres,tipoMoneda);
+        }
+        int tipoCliente = cmbTipoCliente.getSelectedIndex()+1;
+        if(tipoCliente==1)
+        {
+            FrmClienteNatural FrmClienteNatural = new FrmClienteNatural(cuentaB);
+            FrmClienteNatural.setVisible(true);
+            this.dispose();
+        }
+        else
+        {
+            FrmClienteJuridico frmClienteJuridico = new FrmClienteJuridico(cuentaB);
+            frmClienteJuridico.setVisible(true);
+            this.dispose();
+        }
+    }//GEN-LAST:event_btnSiguienteActionPerformed
+    
     public static void main(String args[]) {
         /* Set the Nimbus look and feel */
         //<editor-fold defaultstate="collapsed" desc=" Look and feel setting code (optional) ">
@@ -225,20 +268,27 @@ public class frmRegistrarCuenta extends javax.swing.JFrame {
             }
         });
     }
-
+    
+    private void MostrarCuenta(Cuenta cuenta)
+    {
+        
+    }
+    
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton btnAtras;
     private javax.swing.JButton btnSiguiente;
     private javax.swing.JComboBox<String> cmbMoneda;
     private javax.swing.JComboBox<String> cmbTipoCliente;
     private javax.swing.JComboBox<String> cmbTipoCuenta;
-    private javax.swing.JComboBox<String> jComboBox1;
-    private javax.swing.JLabel jLabel1;
-    private javax.swing.JLabel jLabel2;
-    private javax.swing.JLabel jLabel3;
-    private javax.swing.JLabel jLabel4;
-    private javax.swing.JLabel jLabel5;
-    private javax.swing.JTextField jTextField1;
+    private javax.swing.JComboBox<String> cmbTipoInteres;
+    private javax.swing.JLabel lblClave;
+    private javax.swing.JLabel lblMonedaCuenta;
+    private javax.swing.JLabel lblSaldo;
+    private javax.swing.JLabel lblTipoCliente;
+    private javax.swing.JLabel lblTipoCuenta;
+    private javax.swing.JLabel lblTipoDeInteres;
     private javax.swing.JPanel panDatosUnicos;
+    private javax.swing.JTextField txtClave;
+    private javax.swing.JTextField txtSaldo;
     // End of variables declaration//GEN-END:variables
 }
