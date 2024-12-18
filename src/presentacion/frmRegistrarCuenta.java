@@ -223,7 +223,7 @@ public class frmRegistrarCuenta extends javax.swing.JFrame {
         int tipoCliente = cmbTipoCliente.getSelectedIndex()+1;
         if(tipoCliente==1)
         {
-            FrmClienteNatural FrmClienteNatural = new FrmClienteNatural(cuentaB);
+            frmClienteNatural FrmClienteNatural = new frmClienteNatural(cuentaB);
             FrmClienteNatural.setVisible(true);
             this.dispose();
         }
