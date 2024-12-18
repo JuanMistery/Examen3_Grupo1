@@ -5,12 +5,16 @@
 package datos;
 import java.util.ArrayList;
 import entidades.*;
+import java.io.*;
 /**
  *
  * @author JuanMistery
  */
- class ListaCuentas {
+public class ListaCuentas {
     private ArrayList<Cuenta> listaCuentas = new ArrayList<>();
+
+    public ListaCuentas() {
+    }
     
     public ArrayList<Cuenta> getListaCuentas() {
         return listaCuentas;
@@ -65,26 +69,33 @@ import entidades.*;
         return lista;
     }        
     
-    public int buscarPorNumeroCuenta(String numero, int tipoCuenta) {
+    public int buscarPorNumeroCuenta(String numero) {
         Cuenta cuentaB;
-        String numeroC = null;
-        
-        switch(tipoCuenta){
-            case 1: 
-                numeroC = "A" + numero;
-                break;
-            case 2: 
-                numeroC = "C"+numero;
-                break;
-        }
-        
         for(int i=0; i<listaCuentas.size(); i++) {
             cuentaB = listaCuentas.get(i);
-            if(cuentaB.getNumeroCuenta().compareToIgnoreCase(numeroC)==0)
+            if(cuentaB.getNumeroCuenta().compareToIgnoreCase(numero)==0)
                 return i;
         }
         return -1;
     }
     
+    public boolean guardarEnArchivo(String Archivo) {
+        try (ObjectOutputStream oos = new ObjectOutputStream(new FileOutputStream(Archivo))) {
+            oos.writeObject(this); // Serializa y guarda el objeto actual
+            return true; // Éxito
+        } catch (IOException e) {
+            return false; // Fallo
+        }
+    }
+
+    
+    public static ListaCuentas cargarCuentas(String Archivo)
+    {
+        try (ObjectInputStream ois = new ObjectInputStream(new FileInputStream(Archivo))) {
+            return (ListaCuentas) ois.readObject();
+        } catch (IOException | ClassNotFoundException e) {
+            return null; // Devuelve null en caso de error
+        }
+    }
     
 }
