@@ -41,6 +41,18 @@ public class frmRegistroClienteJuridico extends javax.swing.JFrame {
         txtTelefonoJuridico = new javax.swing.JTextField();
         txtDocumentoConstitucion = new javax.swing.JTextField();
         txtCorreoElectronicoJuridico1 = new javax.swing.JTextField();
+        lblNombreRepresentante = new javax.swing.JLabel();
+        lblApellidoRepresentante = new javax.swing.JLabel();
+        lblDireccionRepresentante = new javax.swing.JLabel();
+        lblTelefonoRepresentante = new javax.swing.JLabel();
+        lblCorreoElectronicoRepresentante = new javax.swing.JLabel();
+        lblDatosDelRepresentate = new javax.swing.JLabel();
+        lblDatosDelRepresentate1 = new javax.swing.JLabel();
+        txtNombreRepresentate = new javax.swing.JTextField();
+        txtApellidoRepresentante = new javax.swing.JTextField();
+        txtDireccionRepresentate = new javax.swing.JTextField();
+        txtTelefonoRepresentante = new javax.swing.JTextField();
+        txtCorreoElectronicoRepresentante = new javax.swing.JTextField();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -48,26 +60,47 @@ public class frmRegistroClienteJuridico extends javax.swing.JFrame {
         lblTitulo.setText("REGISTRO CLIENTE JURIDICO");
 
         lblNombreEmpresa.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
-        lblNombreEmpresa.setText("Nombre de Empresa");
+        lblNombreEmpresa.setText("Nombre de Empresa:");
 
         lblRUC.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
-        lblRUC.setText("RUC");
+        lblRUC.setText("RUC:");
         lblRUC.setToolTipText("");
 
         lblDireccionFiscal.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
-        lblDireccionFiscal.setText("Direccion Fiscal");
+        lblDireccionFiscal.setText("Direccion Fiscal:");
 
         lblDireccionOperacion.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
-        lblDireccionOperacion.setText("Direccion Operacion");
+        lblDireccionOperacion.setText("Direccion Operacion:");
 
         lblTelefonoJuridico.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
-        lblTelefonoJuridico.setText("Telefono Juridico");
+        lblTelefonoJuridico.setText("Telefono Juridico:");
 
         lblCorreoElectronicoJuridico.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
-        lblCorreoElectronicoJuridico.setText("Correo Electronico Juridico");
+        lblCorreoElectronicoJuridico.setText("Correo Electronico Juridico:");
 
         lblDocumentoConstitucion.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
-        lblDocumentoConstitucion.setText("Documento De constitucion");
+        lblDocumentoConstitucion.setText("Documento De constitucion:");
+
+        lblNombreRepresentante.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
+        lblNombreRepresentante.setText("Nombre:");
+
+        lblApellidoRepresentante.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
+        lblApellidoRepresentante.setText("Apellido:");
+
+        lblDireccionRepresentante.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
+        lblDireccionRepresentante.setText("Direccion:");
+
+        lblTelefonoRepresentante.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
+        lblTelefonoRepresentante.setText("Telefono:");
+
+        lblCorreoElectronicoRepresentante.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
+        lblCorreoElectronicoRepresentante.setText("Correo Electronico:");
+
+        lblDatosDelRepresentate.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
+        lblDatosDelRepresentate.setText("DATOS DE LA EMPRESA:");
+
+        lblDatosDelRepresentate1.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
+        lblDatosDelRepresentate1.setText("DATOS DEL REPRESENTANTE:");
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
@@ -76,40 +109,59 @@ public class frmRegistroClienteJuridico extends javax.swing.JFrame {
             .addGroup(layout.createSequentialGroup()
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(layout.createSequentialGroup()
-                        .addComponent(lblNombreEmpresa, javax.swing.GroupLayout.PREFERRED_SIZE, 143, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                        .addComponent(txtNombreEmpresa, javax.swing.GroupLayout.PREFERRED_SIZE, 264, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addGroup(layout.createSequentialGroup()
+                                .addGap(133, 133, 133)
+                                .addComponent(lblTitulo, javax.swing.GroupLayout.PREFERRED_SIZE, 215, javax.swing.GroupLayout.PREFERRED_SIZE))
+                            .addGroup(layout.createSequentialGroup()
+                                .addGap(32, 32, 32)
+                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                    .addComponent(lblCorreoElectronicoRepresentante, javax.swing.GroupLayout.PREFERRED_SIZE, 130, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                    .addComponent(lblTelefonoRepresentante, javax.swing.GroupLayout.PREFERRED_SIZE, 75, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                    .addComponent(lblDireccionRepresentante, javax.swing.GroupLayout.PREFERRED_SIZE, 83, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                    .addComponent(lblNombreRepresentante, javax.swing.GroupLayout.PREFERRED_SIZE, 114, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                    .addComponent(lblApellidoRepresentante, javax.swing.GroupLayout.PREFERRED_SIZE, 97, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                    .addComponent(lblDocumentoConstitucion)
+                                    .addComponent(lblCorreoElectronicoJuridico)
+                                    .addComponent(lblDireccionOperacion)
+                                    .addComponent(lblTelefonoJuridico)
+                                    .addComponent(lblRUC)
+                                    .addComponent(lblNombreEmpresa, javax.swing.GroupLayout.PREFERRED_SIZE, 143, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                    .addComponent(lblDireccionFiscal))))
+                        .addGap(0, 0, Short.MAX_VALUE))
                     .addGroup(layout.createSequentialGroup()
                         .addContainerGap()
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addGroup(layout.createSequentialGroup()
-                                .addComponent(lblDireccionFiscal)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                .addComponent(txtDireccionFiscal, javax.swing.GroupLayout.PREFERRED_SIZE, 264, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                .addGap(0, 0, Short.MAX_VALUE)
+                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                    .addComponent(txtNombreEmpresa, javax.swing.GroupLayout.PREFERRED_SIZE, 264, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                    .addComponent(txtDireccionFiscal, javax.swing.GroupLayout.PREFERRED_SIZE, 264, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                    .addComponent(txtRUC, javax.swing.GroupLayout.PREFERRED_SIZE, 264, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                    .addComponent(txtTelefonoJuridico, javax.swing.GroupLayout.PREFERRED_SIZE, 264, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                    .addComponent(txtDireccionOperacion, javax.swing.GroupLayout.PREFERRED_SIZE, 264, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                    .addComponent(txtCorreoElectronicoJuridico1, javax.swing.GroupLayout.PREFERRED_SIZE, 264, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                    .addComponent(txtDocumentoConstitucion, javax.swing.GroupLayout.PREFERRED_SIZE, 264, javax.swing.GroupLayout.PREFERRED_SIZE)))
                             .addGroup(layout.createSequentialGroup()
-                                .addComponent(lblRUC)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                .addComponent(txtRUC, javax.swing.GroupLayout.PREFERRED_SIZE, 264, javax.swing.GroupLayout.PREFERRED_SIZE))
-                            .addGroup(layout.createSequentialGroup()
-                                .addComponent(lblTelefonoJuridico)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                .addComponent(txtTelefonoJuridico, javax.swing.GroupLayout.PREFERRED_SIZE, 264, javax.swing.GroupLayout.PREFERRED_SIZE))
-                            .addGroup(layout.createSequentialGroup()
-                                .addComponent(lblDireccionOperacion)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                .addComponent(txtDireccionOperacion, javax.swing.GroupLayout.PREFERRED_SIZE, 264, javax.swing.GroupLayout.PREFERRED_SIZE))
-                            .addGroup(layout.createSequentialGroup()
-                                .addComponent(lblCorreoElectronicoJuridico)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                .addComponent(txtCorreoElectronicoJuridico1, javax.swing.GroupLayout.PREFERRED_SIZE, 264, javax.swing.GroupLayout.PREFERRED_SIZE))
-                            .addGroup(layout.createSequentialGroup()
-                                .addComponent(lblDocumentoConstitucion)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 44, Short.MAX_VALUE)
-                                .addComponent(txtDocumentoConstitucion, javax.swing.GroupLayout.PREFERRED_SIZE, 264, javax.swing.GroupLayout.PREFERRED_SIZE)))))
-                .addGap(19, 19, 19))
+                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                    .addComponent(txtCorreoElectronicoRepresentante, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 264, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                    .addComponent(txtTelefonoRepresentante, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 264, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                    .addGroup(layout.createSequentialGroup()
+                                        .addGap(184, 184, 184)
+                                        .addComponent(txtApellidoRepresentante, javax.swing.GroupLayout.PREFERRED_SIZE, 264, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                    .addGroup(layout.createSequentialGroup()
+                                        .addGap(184, 184, 184)
+                                        .addComponent(txtNombreRepresentate, javax.swing.GroupLayout.PREFERRED_SIZE, 264, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                    .addGroup(layout.createSequentialGroup()
+                                        .addGap(184, 184, 184)
+                                        .addComponent(txtDireccionRepresentate, javax.swing.GroupLayout.PREFERRED_SIZE, 264, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                                .addGap(0, 57, Short.MAX_VALUE)))))
+                .addGap(6, 6, 6))
             .addGroup(layout.createSequentialGroup()
-                .addGap(133, 133, 133)
-                .addComponent(lblTitulo, javax.swing.GroupLayout.PREFERRED_SIZE, 215, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(15, 15, 15)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(lblDatosDelRepresentate, javax.swing.GroupLayout.PREFERRED_SIZE, 284, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(lblDatosDelRepresentate1, javax.swing.GroupLayout.PREFERRED_SIZE, 284, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
@@ -117,40 +169,67 @@ public class frmRegistroClienteJuridico extends javax.swing.JFrame {
             .addGroup(layout.createSequentialGroup()
                 .addContainerGap()
                 .addComponent(lblTitulo)
-                .addGap(28, 28, 28)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(lblNombreEmpresa)
-                    .addComponent(txtNombreEmpresa, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(lblRUC)
-                    .addComponent(txtRUC, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(2, 2, 2)
+                .addComponent(lblDatosDelRepresentate1)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(lblDireccionFiscal)
-                    .addComponent(txtDireccionFiscal, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(layout.createSequentialGroup()
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                        .addComponent(txtNombreRepresentate, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(txtApellidoRepresentante, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(txtDireccionRepresentate, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                            .addComponent(lblDireccionOperacion)
-                            .addComponent(txtDireccionOperacion, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                        .addComponent(lblTelefonoJuridico))
+                            .addComponent(txtTelefonoRepresentante, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(lblTelefonoRepresentante))
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                            .addComponent(txtCorreoElectronicoRepresentante, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(lblCorreoElectronicoRepresentante)))
                     .addGroup(layout.createSequentialGroup()
-                        .addGap(44, 44, 44)
-                        .addComponent(txtTelefonoJuridico, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                        .addComponent(lblNombreRepresentante)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(lblApellidoRepresentante)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                        .addComponent(lblDireccionRepresentante)))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(lblDatosDelRepresentate)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(layout.createSequentialGroup()
+                        .addComponent(lblNombreEmpresa)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(lblRUC)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                        .addComponent(lblDireccionFiscal)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                        .addComponent(lblDireccionOperacion)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                        .addComponent(lblTelefonoJuridico)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                         .addComponent(lblCorreoElectronicoJuridico)
                         .addGap(16, 16, 16)
                         .addComponent(lblDocumentoConstitucion))
                     .addGroup(layout.createSequentialGroup()
+                        .addComponent(txtNombreEmpresa, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(txtRUC, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                        .addComponent(txtDireccionFiscal, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addGroup(layout.createSequentialGroup()
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                                .addComponent(txtDireccionOperacion, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addGap(32, 32, 32))
+                            .addGroup(layout.createSequentialGroup()
+                                .addGap(44, 44, 44)
+                                .addComponent(txtTelefonoJuridico, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                         .addComponent(txtCorreoElectronicoJuridico1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                         .addComponent(txtDocumentoConstitucion, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                .addContainerGap(119, Short.MAX_VALUE))
+                .addContainerGap(16, Short.MAX_VALUE))
         );
 
         pack();
@@ -192,20 +271,32 @@ public class frmRegistroClienteJuridico extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JLabel lblApellidoRepresentante;
     private javax.swing.JLabel lblCorreoElectronicoJuridico;
+    private javax.swing.JLabel lblCorreoElectronicoRepresentante;
+    private javax.swing.JLabel lblDatosDelRepresentate;
+    private javax.swing.JLabel lblDatosDelRepresentate1;
     private javax.swing.JLabel lblDireccionFiscal;
     private javax.swing.JLabel lblDireccionOperacion;
+    private javax.swing.JLabel lblDireccionRepresentante;
     private javax.swing.JLabel lblDocumentoConstitucion;
     private javax.swing.JLabel lblNombreEmpresa;
+    private javax.swing.JLabel lblNombreRepresentante;
     private javax.swing.JLabel lblRUC;
     private javax.swing.JLabel lblTelefonoJuridico;
+    private javax.swing.JLabel lblTelefonoRepresentante;
     private javax.swing.JLabel lblTitulo;
+    private javax.swing.JTextField txtApellidoRepresentante;
     private javax.swing.JTextField txtCorreoElectronicoJuridico1;
+    private javax.swing.JTextField txtCorreoElectronicoRepresentante;
     private javax.swing.JTextField txtDireccionFiscal;
     private javax.swing.JTextField txtDireccionOperacion;
+    private javax.swing.JTextField txtDireccionRepresentate;
     private javax.swing.JTextField txtDocumentoConstitucion;
     private javax.swing.JTextField txtNombreEmpresa;
+    private javax.swing.JTextField txtNombreRepresentate;
     private javax.swing.JTextField txtRUC;
     private javax.swing.JTextField txtTelefonoJuridico;
+    private javax.swing.JTextField txtTelefonoRepresentante;
     // End of variables declaration//GEN-END:variables
 }

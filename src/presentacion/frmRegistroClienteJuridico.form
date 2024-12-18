@@ -26,51 +26,76 @@
           <Group type="102" attributes="0">
               <Group type="103" groupAlignment="0" attributes="0">
                   <Group type="102" attributes="0">
-                      <Component id="lblNombreEmpresa" min="-2" pref="143" max="-2" attributes="0"/>
-                      <EmptySpace max="32767" attributes="0"/>
-                      <Component id="txtNombreEmpresa" min="-2" pref="264" max="-2" attributes="0"/>
+                      <Group type="103" groupAlignment="0" attributes="0">
+                          <Group type="102" attributes="0">
+                              <EmptySpace min="-2" pref="133" max="-2" attributes="0"/>
+                              <Component id="lblTitulo" min="-2" pref="215" max="-2" attributes="0"/>
+                          </Group>
+                          <Group type="102" alignment="0" attributes="0">
+                              <EmptySpace min="-2" pref="32" max="-2" attributes="0"/>
+                              <Group type="103" groupAlignment="0" attributes="0">
+                                  <Component id="lblCorreoElectronicoRepresentante" alignment="0" min="-2" pref="130" max="-2" attributes="0"/>
+                                  <Component id="lblTelefonoRepresentante" alignment="0" min="-2" pref="75" max="-2" attributes="0"/>
+                                  <Component id="lblDireccionRepresentante" alignment="0" min="-2" pref="83" max="-2" attributes="0"/>
+                                  <Component id="lblNombreRepresentante" alignment="0" min="-2" pref="114" max="-2" attributes="0"/>
+                                  <Component id="lblApellidoRepresentante" alignment="0" min="-2" pref="97" max="-2" attributes="0"/>
+                                  <Component id="lblDocumentoConstitucion" alignment="0" min="-2" max="-2" attributes="0"/>
+                                  <Component id="lblCorreoElectronicoJuridico" alignment="0" min="-2" max="-2" attributes="0"/>
+                                  <Component id="lblDireccionOperacion" alignment="0" min="-2" max="-2" attributes="0"/>
+                                  <Component id="lblTelefonoJuridico" alignment="0" min="-2" max="-2" attributes="0"/>
+                                  <Component id="lblRUC" alignment="0" min="-2" max="-2" attributes="0"/>
+                                  <Component id="lblNombreEmpresa" alignment="0" min="-2" pref="143" max="-2" attributes="0"/>
+                                  <Component id="lblDireccionFiscal" alignment="0" min="-2" max="-2" attributes="0"/>
+                              </Group>
+                          </Group>
+                      </Group>
+                      <EmptySpace min="0" pref="0" max="32767" attributes="0"/>
                   </Group>
                   <Group type="102" attributes="0">
                       <EmptySpace max="-2" attributes="0"/>
                       <Group type="103" groupAlignment="0" attributes="0">
                           <Group type="102" alignment="0" attributes="0">
-                              <Component id="lblDireccionFiscal" min="-2" max="-2" attributes="0"/>
-                              <EmptySpace max="32767" attributes="0"/>
-                              <Component id="txtDireccionFiscal" min="-2" pref="264" max="-2" attributes="0"/>
-                          </Group>
-                          <Group type="102" alignment="0" attributes="0">
-                              <Component id="lblRUC" min="-2" max="-2" attributes="0"/>
-                              <EmptySpace max="32767" attributes="0"/>
-                              <Component id="txtRUC" min="-2" pref="264" max="-2" attributes="0"/>
-                          </Group>
-                          <Group type="102" attributes="0">
-                              <Component id="lblTelefonoJuridico" min="-2" max="-2" attributes="0"/>
-                              <EmptySpace max="32767" attributes="0"/>
-                              <Component id="txtTelefonoJuridico" min="-2" pref="264" max="-2" attributes="0"/>
+                              <EmptySpace min="0" pref="0" max="32767" attributes="0"/>
+                              <Group type="103" groupAlignment="0" attributes="0">
+                                  <Component id="txtNombreEmpresa" alignment="0" min="-2" pref="264" max="-2" attributes="0"/>
+                                  <Component id="txtDireccionFiscal" alignment="0" min="-2" pref="264" max="-2" attributes="0"/>
+                                  <Component id="txtRUC" alignment="0" min="-2" pref="264" max="-2" attributes="0"/>
+                                  <Component id="txtTelefonoJuridico" alignment="0" min="-2" pref="264" max="-2" attributes="0"/>
+                                  <Component id="txtDireccionOperacion" alignment="0" min="-2" pref="264" max="-2" attributes="0"/>
+                                  <Component id="txtCorreoElectronicoJuridico1" alignment="0" min="-2" pref="264" max="-2" attributes="0"/>
+                                  <Component id="txtDocumentoConstitucion" alignment="0" min="-2" pref="264" max="-2" attributes="0"/>
+                              </Group>
                           </Group>
                           <Group type="102" attributes="0">
-                              <Component id="lblDireccionOperacion" min="-2" max="-2" attributes="0"/>
-                              <EmptySpace max="32767" attributes="0"/>
-                              <Component id="txtDireccionOperacion" min="-2" pref="264" max="-2" attributes="0"/>
-                          </Group>
-                          <Group type="102" attributes="0">
-                              <Component id="lblCorreoElectronicoJuridico" min="-2" max="-2" attributes="0"/>
-                              <EmptySpace max="32767" attributes="0"/>
-                              <Component id="txtCorreoElectronicoJuridico1" min="-2" pref="264" max="-2" attributes="0"/>
-                          </Group>
-                          <Group type="102" attributes="0">
-                              <Component id="lblDocumentoConstitucion" min="-2" max="-2" attributes="0"/>
-                              <EmptySpace pref="44" max="32767" attributes="0"/>
-                              <Component id="txtDocumentoConstitucion" min="-2" pref="264" max="-2" attributes="0"/>
+                              <Group type="103" groupAlignment="0" attributes="0">
+                                  <Component id="txtCorreoElectronicoRepresentante" alignment="1" min="-2" pref="264" max="-2" attributes="0"/>
+                                  <Component id="txtTelefonoRepresentante" alignment="1" min="-2" pref="264" max="-2" attributes="0"/>
+                                  <Group type="102" attributes="0">
+                                      <EmptySpace min="-2" pref="184" max="-2" attributes="0"/>
+                                      <Component id="txtApellidoRepresentante" min="-2" pref="264" max="-2" attributes="0"/>
+                                  </Group>
+                                  <Group type="102" alignment="0" attributes="0">
+                                      <EmptySpace min="-2" pref="184" max="-2" attributes="0"/>
+                                      <Component id="txtNombreRepresentate" min="-2" pref="264" max="-2" attributes="0"/>
+                                  </Group>
+                                  <Group type="102" alignment="0" attributes="0">
+                                      <EmptySpace min="-2" pref="184" max="-2" attributes="0"/>
+                                      <Component id="txtDireccionRepresentate" min="-2" pref="264" max="-2" attributes="0"/>
+                                  </Group>
+                              </Group>
+                              <EmptySpace min="0" pref="57" max="32767" attributes="0"/>
                           </Group>
                       </Group>
                   </Group>
               </Group>
-              <EmptySpace min="-2" pref="19" max="-2" attributes="0"/>
+              <EmptySpace min="-2" pref="6" max="-2" attributes="0"/>
           </Group>
           <Group type="102" alignment="0" attributes="0">
-              <EmptySpace min="-2" pref="133" max="-2" attributes="0"/>
-              <Component id="lblTitulo" min="-2" pref="215" max="-2" attributes="0"/>
+              <EmptySpace min="-2" pref="15" max="-2" attributes="0"/>
+              <Group type="103" groupAlignment="0" attributes="0">
+                  <Component id="lblDatosDelRepresentate" min="-2" pref="284" max="-2" attributes="0"/>
+                  <Component id="lblDatosDelRepresentate1" min="-2" pref="284" max="-2" attributes="0"/>
+              </Group>
               <EmptySpace max="32767" attributes="0"/>
           </Group>
       </Group>
@@ -80,50 +105,78 @@
           <Group type="102" alignment="0" attributes="0">
               <EmptySpace max="-2" attributes="0"/>
               <Component id="lblTitulo" min="-2" max="-2" attributes="0"/>
-              <EmptySpace min="-2" pref="28" max="-2" attributes="0"/>
-              <Group type="103" groupAlignment="3" attributes="0">
-                  <Component id="lblNombreEmpresa" alignment="3" min="-2" max="-2" attributes="0"/>
-                  <Component id="txtNombreEmpresa" alignment="3" min="-2" max="-2" attributes="0"/>
-              </Group>
-              <EmptySpace max="-2" attributes="0"/>
-              <Group type="103" groupAlignment="3" attributes="0">
-                  <Component id="lblRUC" alignment="3" min="-2" max="-2" attributes="0"/>
-                  <Component id="txtRUC" alignment="3" min="-2" max="-2" attributes="0"/>
-              </Group>
-              <EmptySpace type="unrelated" max="-2" attributes="0"/>
-              <Group type="103" groupAlignment="3" attributes="0">
-                  <Component id="lblDireccionFiscal" alignment="3" min="-2" max="-2" attributes="0"/>
-                  <Component id="txtDireccionFiscal" alignment="3" min="-2" max="-2" attributes="0"/>
-              </Group>
-              <Group type="103" groupAlignment="0" attributes="0">
-                  <Group type="102" alignment="0" attributes="0">
-                      <EmptySpace type="unrelated" max="-2" attributes="0"/>
-                      <Group type="103" groupAlignment="3" attributes="0">
-                          <Component id="lblDireccionOperacion" alignment="3" min="-2" max="-2" attributes="0"/>
-                          <Component id="txtDireccionOperacion" alignment="3" min="-2" max="-2" attributes="0"/>
-                      </Group>
-                      <EmptySpace type="unrelated" max="-2" attributes="0"/>
-                      <Component id="lblTelefonoJuridico" min="-2" max="-2" attributes="0"/>
-                  </Group>
-                  <Group type="102" alignment="0" attributes="0">
-                      <EmptySpace min="-2" pref="44" max="-2" attributes="0"/>
-                      <Component id="txtTelefonoJuridico" min="-2" max="-2" attributes="0"/>
-                  </Group>
-              </Group>
+              <EmptySpace min="-2" pref="2" max="-2" attributes="0"/>
+              <Component id="lblDatosDelRepresentate1" min="-2" max="-2" attributes="0"/>
               <EmptySpace type="unrelated" max="-2" attributes="0"/>
               <Group type="103" groupAlignment="0" attributes="0">
                   <Group type="102" attributes="0">
+                      <Component id="txtNombreRepresentate" min="-2" max="-2" attributes="0"/>
+                      <EmptySpace max="-2" attributes="0"/>
+                      <Component id="txtApellidoRepresentante" min="-2" max="-2" attributes="0"/>
+                      <EmptySpace max="-2" attributes="0"/>
+                      <Component id="txtDireccionRepresentate" min="-2" max="-2" attributes="0"/>
+                      <EmptySpace max="-2" attributes="0"/>
+                      <Group type="103" groupAlignment="3" attributes="0">
+                          <Component id="txtTelefonoRepresentante" alignment="3" min="-2" max="-2" attributes="0"/>
+                          <Component id="lblTelefonoRepresentante" alignment="3" min="-2" max="-2" attributes="0"/>
+                      </Group>
+                      <EmptySpace max="-2" attributes="0"/>
+                      <Group type="103" groupAlignment="3" attributes="0">
+                          <Component id="txtCorreoElectronicoRepresentante" alignment="3" min="-2" max="-2" attributes="0"/>
+                          <Component id="lblCorreoElectronicoRepresentante" alignment="3" min="-2" max="-2" attributes="0"/>
+                      </Group>
+                  </Group>
+                  <Group type="102" attributes="0">
+                      <Component id="lblNombreRepresentante" min="-2" max="-2" attributes="0"/>
+                      <EmptySpace max="-2" attributes="0"/>
+                      <Component id="lblApellidoRepresentante" min="-2" max="-2" attributes="0"/>
+                      <EmptySpace type="unrelated" max="-2" attributes="0"/>
+                      <Component id="lblDireccionRepresentante" min="-2" max="-2" attributes="0"/>
+                  </Group>
+              </Group>
+              <EmptySpace max="-2" attributes="0"/>
+              <Component id="lblDatosDelRepresentate" min="-2" max="-2" attributes="0"/>
+              <EmptySpace max="-2" attributes="0"/>
+              <Group type="103" groupAlignment="0" attributes="0">
+                  <Group type="102" attributes="0">
+                      <Component id="lblNombreEmpresa" min="-2" max="-2" attributes="0"/>
+                      <EmptySpace max="-2" attributes="0"/>
+                      <Component id="lblRUC" min="-2" max="-2" attributes="0"/>
+                      <EmptySpace type="unrelated" max="-2" attributes="0"/>
+                      <Component id="lblDireccionFiscal" min="-2" max="-2" attributes="0"/>
+                      <EmptySpace type="unrelated" max="-2" attributes="0"/>
+                      <Component id="lblDireccionOperacion" min="-2" max="-2" attributes="0"/>
+                      <EmptySpace type="unrelated" max="-2" attributes="0"/>
+                      <Component id="lblTelefonoJuridico" min="-2" max="-2" attributes="0"/>
+                      <EmptySpace type="unrelated" max="-2" attributes="0"/>
                       <Component id="lblCorreoElectronicoJuridico" min="-2" max="-2" attributes="0"/>
                       <EmptySpace min="-2" pref="16" max="-2" attributes="0"/>
                       <Component id="lblDocumentoConstitucion" min="-2" max="-2" attributes="0"/>
                   </Group>
                   <Group type="102" attributes="0">
+                      <Component id="txtNombreEmpresa" min="-2" max="-2" attributes="0"/>
+                      <EmptySpace max="-2" attributes="0"/>
+                      <Component id="txtRUC" min="-2" max="-2" attributes="0"/>
+                      <EmptySpace type="unrelated" max="-2" attributes="0"/>
+                      <Component id="txtDireccionFiscal" min="-2" max="-2" attributes="0"/>
+                      <Group type="103" groupAlignment="0" attributes="0">
+                          <Group type="102" alignment="0" attributes="0">
+                              <EmptySpace type="unrelated" max="-2" attributes="0"/>
+                              <Component id="txtDireccionOperacion" min="-2" max="-2" attributes="0"/>
+                              <EmptySpace min="32" pref="32" max="-2" attributes="0"/>
+                          </Group>
+                          <Group type="102" alignment="0" attributes="0">
+                              <EmptySpace min="-2" pref="44" max="-2" attributes="0"/>
+                              <Component id="txtTelefonoJuridico" min="-2" max="-2" attributes="0"/>
+                          </Group>
+                      </Group>
+                      <EmptySpace type="unrelated" max="-2" attributes="0"/>
                       <Component id="txtCorreoElectronicoJuridico1" min="-2" max="-2" attributes="0"/>
                       <EmptySpace type="unrelated" max="-2" attributes="0"/>
                       <Component id="txtDocumentoConstitucion" min="-2" max="-2" attributes="0"/>
                   </Group>
               </Group>
-              <EmptySpace pref="119" max="32767" attributes="0"/>
+              <EmptySpace pref="16" max="32767" attributes="0"/>
           </Group>
       </Group>
     </DimensionLayout>
@@ -142,7 +195,7 @@
         <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
           <Font name="Segoe UI" size="14" style="0"/>
         </Property>
-        <Property name="text" type="java.lang.String" value="Nombre de Empresa"/>
+        <Property name="text" type="java.lang.String" value="Nombre de Empresa:"/>
       </Properties>
     </Component>
     <Component class="javax.swing.JLabel" name="lblRUC">
@@ -150,7 +203,7 @@
         <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
           <Font name="Segoe UI" size="14" style="0"/>
         </Property>
-        <Property name="text" type="java.lang.String" value="RUC"/>
+        <Property name="text" type="java.lang.String" value="RUC:"/>
         <Property name="toolTipText" type="java.lang.String" value=""/>
       </Properties>
     </Component>
@@ -159,7 +212,7 @@
         <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
           <Font name="Segoe UI" size="14" style="0"/>
         </Property>
-        <Property name="text" type="java.lang.String" value="Direccion Fiscal"/>
+        <Property name="text" type="java.lang.String" value="Direccion Fiscal:"/>
       </Properties>
     </Component>
     <Component class="javax.swing.JLabel" name="lblDireccionOperacion">
@@ -167,7 +220,7 @@
         <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
           <Font name="Segoe UI" size="14" style="0"/>
         </Property>
-        <Property name="text" type="java.lang.String" value="Direccion Operacion"/>
+        <Property name="text" type="java.lang.String" value="Direccion Operacion:"/>
       </Properties>
     </Component>
     <Component class="javax.swing.JLabel" name="lblTelefonoJuridico">
@@ -175,7 +228,7 @@
         <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
           <Font name="Segoe UI" size="14" style="0"/>
         </Property>
-        <Property name="text" type="java.lang.String" value="Telefono Juridico"/>
+        <Property name="text" type="java.lang.String" value="Telefono Juridico:"/>
       </Properties>
     </Component>
     <Component class="javax.swing.JLabel" name="lblCorreoElectronicoJuridico">
@@ -183,7 +236,7 @@
         <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
           <Font name="Segoe UI" size="14" style="0"/>
         </Property>
-        <Property name="text" type="java.lang.String" value="Correo Electronico Juridico"/>
+        <Property name="text" type="java.lang.String" value="Correo Electronico Juridico:"/>
       </Properties>
     </Component>
     <Component class="javax.swing.JLabel" name="lblDocumentoConstitucion">
@@ -191,7 +244,7 @@
         <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
           <Font name="Segoe UI" size="14" style="0"/>
         </Property>
-        <Property name="text" type="java.lang.String" value="Documento De constitucion"/>
+        <Property name="text" type="java.lang.String" value="Documento De constitucion:"/>
       </Properties>
     </Component>
     <Component class="javax.swing.JTextField" name="txtNombreEmpresa">
@@ -207,6 +260,72 @@
     <Component class="javax.swing.JTextField" name="txtDocumentoConstitucion">
     </Component>
     <Component class="javax.swing.JTextField" name="txtCorreoElectronicoJuridico1">
+    </Component>
+    <Component class="javax.swing.JLabel" name="lblNombreRepresentante">
+      <Properties>
+        <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
+          <Font name="Segoe UI" size="14" style="0"/>
+        </Property>
+        <Property name="text" type="java.lang.String" value="Nombre:"/>
+      </Properties>
+    </Component>
+    <Component class="javax.swing.JLabel" name="lblApellidoRepresentante">
+      <Properties>
+        <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
+          <Font name="Segoe UI" size="14" style="0"/>
+        </Property>
+        <Property name="text" type="java.lang.String" value="Apellido:"/>
+      </Properties>
+    </Component>
+    <Component class="javax.swing.JLabel" name="lblDireccionRepresentante">
+      <Properties>
+        <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
+          <Font name="Segoe UI" size="14" style="0"/>
+        </Property>
+        <Property name="text" type="java.lang.String" value="Direccion:"/>
+      </Properties>
+    </Component>
+    <Component class="javax.swing.JLabel" name="lblTelefonoRepresentante">
+      <Properties>
+        <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
+          <Font name="Segoe UI" size="14" style="0"/>
+        </Property>
+        <Property name="text" type="java.lang.String" value="Telefono:"/>
+      </Properties>
+    </Component>
+    <Component class="javax.swing.JLabel" name="lblCorreoElectronicoRepresentante">
+      <Properties>
+        <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
+          <Font name="Segoe UI" size="14" style="0"/>
+        </Property>
+        <Property name="text" type="java.lang.String" value="Correo Electronico:"/>
+      </Properties>
+    </Component>
+    <Component class="javax.swing.JLabel" name="lblDatosDelRepresentate">
+      <Properties>
+        <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
+          <Font name="Segoe UI" size="14" style="1"/>
+        </Property>
+        <Property name="text" type="java.lang.String" value="DATOS DE LA EMPRESA:"/>
+      </Properties>
+    </Component>
+    <Component class="javax.swing.JLabel" name="lblDatosDelRepresentate1">
+      <Properties>
+        <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
+          <Font name="Segoe UI" size="14" style="1"/>
+        </Property>
+        <Property name="text" type="java.lang.String" value="DATOS DEL REPRESENTANTE:"/>
+      </Properties>
+    </Component>
+    <Component class="javax.swing.JTextField" name="txtNombreRepresentate">
+    </Component>
+    <Component class="javax.swing.JTextField" name="txtApellidoRepresentante">
+    </Component>
+    <Component class="javax.swing.JTextField" name="txtDireccionRepresentate">
+    </Component>
+    <Component class="javax.swing.JTextField" name="txtTelefonoRepresentante">
+    </Component>
+    <Component class="javax.swing.JTextField" name="txtCorreoElectronicoRepresentante">
     </Component>
   </SubComponents>
 </Form>
