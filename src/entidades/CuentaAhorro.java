@@ -13,17 +13,12 @@ import java.util.*;
 public class CuentaAhorro extends Cuenta {
     private float limiteDeRetiro;
     private GregorianCalendar fechaDeCorte;
+    private ArrayList<Persona> beneficiarios;
 
-    public CuentaAhorro(float limiteDeRetiro, GregorianCalendar fechaDeCorte, float saldoCuenta, String clave, int tipoCuenta, Cliente titularDeCuenta) {
-        super(saldoCuenta, clave, tipoCuenta, titularDeCuenta);
+    public CuentaAhorro(float limiteDeRetiro, ArrayList<Persona> beneficiarios, float saldoCuenta, String clave, Cliente titularDeCuenta,int tipoDeIntereses, int tipoMonedaCuenta) {
+        super(saldoCuenta, clave, titularDeCuenta, 1, tipoDeIntereses, tipoMonedaCuenta);
         this.limiteDeRetiro = limiteDeRetiro;
-        this.fechaDeCorte = fechaDeCorte;
-    }
-
-    public CuentaAhorro(float limiteDeRetiro, GregorianCalendar fechaDeCorte, String clave, int tipoCuenta, Cliente titularDeCuenta) {
-        super(clave, tipoCuenta, titularDeCuenta);
-        this.limiteDeRetiro = limiteDeRetiro;
-        this.fechaDeCorte = fechaDeCorte;
+        this.beneficiarios = beneficiarios;
     }
 
     public float getLimiteDeRetiro() {

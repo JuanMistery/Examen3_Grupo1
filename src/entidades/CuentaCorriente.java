@@ -12,14 +12,8 @@ public class CuentaCorriente extends Cuenta{
     private float limiteDeGiro;
     private int LimiteDeCheques;
 
-    public CuentaCorriente(float limiteDeGiro, int LimiteDeCheques, float saldoCuenta, String clave, int tipoCuenta, Cliente titularDeCuenta) {
-        super(saldoCuenta, clave, tipoCuenta, titularDeCuenta);
-        this.limiteDeGiro = limiteDeGiro;
-        this.LimiteDeCheques = LimiteDeCheques;
-    }
-
-    public CuentaCorriente(float limiteDeGiro, int LimiteDeCheques, String clave, int tipoCuenta, Cliente titularDeCuenta) {
-        super(clave, tipoCuenta, titularDeCuenta);
+    public CuentaCorriente(float limiteDeGiro, int LimiteDeCheques, float saldoCuenta, String clave, Cliente titularDeCuenta,int tipoDeIntereses, int tipoMonedaCuenta) {
+        super(saldoCuenta, clave, titularDeCuenta, 2, tipoDeIntereses, tipoMonedaCuenta);
         this.limiteDeGiro = limiteDeGiro;
         this.LimiteDeCheques = LimiteDeCheques;
     }

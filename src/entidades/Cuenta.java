@@ -26,24 +26,14 @@ public abstract class Cuenta implements ImptoTransaccionesFinancieras{
     public Cuenta()
     {
     }
-    
-    public Cuenta (float saldoCuenta, String clave, int tipoCuenta, Cliente titularDeCuenta) { 
-        this.tipoCuenta = tipoCuenta;
+
+    public Cuenta(float saldoCuenta, String clave, Cliente titularDeCuenta, int tipoCuenta, int tipoDeIntereses, int tipoMonedaCuenta) {
         this.saldoCuenta = saldoCuenta;
         this.clave = clave;
         this.titularDeCuenta = titularDeCuenta;
-        fechaCreacion = new GregorianCalendar();
-        if(tipoCuenta == 1)
-            ++totalCuentasAhorro;
-        else
-            ++totalCuentasCorriente;
-        numeroCuenta = generarNumeroCuenta();
-    }
-    
-    public Cuenta(String clave, int tipoCuenta, Cliente titularDeCuenta) { 
         this.tipoCuenta = tipoCuenta;
-        saldoCuenta = 0.0f;
-        this.clave = clave;
+        this.tipoDeIntereses = tipoDeIntereses;
+        this.tipoMonedaCuenta = tipoMonedaCuenta;
         this.titularDeCuenta = titularDeCuenta;
         fechaCreacion = new GregorianCalendar();
         if(tipoCuenta == 1)
