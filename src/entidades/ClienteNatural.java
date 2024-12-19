@@ -13,11 +13,11 @@ import java.util.*;
 public class ClienteNatural extends Cliente {
     private int tipoDeDocumentoDeIdentidad;
     private String documentoDeIdentidad;
-    private String estadoCivil;
+    private int estadoCivil;
     private GregorianCalendar fechaNacimiento;
 
-    public ClienteNatural(int tipoDeDocumentoDeIdentidad, String documentoDeIdentidad, String estadoCivil, GregorianCalendar fechaNacimiento, int tipoCliente, String nombres, String apellidos, String direccion, String telefono, String correoElectronico) {
-        super(tipoCliente, nombres, apellidos, direccion, telefono, correoElectronico);
+    public ClienteNatural(int tipoDeDocumentoDeIdentidad, String documentoDeIdentidad, int estadoCivil, GregorianCalendar fechaNacimiento,String nombres, String apellidos, String direccion, String telefono, String correoElectronico) {
+        super(1, nombres, apellidos, direccion, telefono, correoElectronico);
         this.tipoDeDocumentoDeIdentidad = tipoDeDocumentoDeIdentidad;
         this.documentoDeIdentidad = documentoDeIdentidad;
         this.estadoCivil = estadoCivil;
@@ -32,11 +32,11 @@ public class ClienteNatural extends Cliente {
         return documentoDeIdentidad;
     }
     
-    public String getEstadoCivil() {
+    public int getEstadoCivil() {
         return estadoCivil;
     }
 
-    public void setEstadoCivil(String estadoCivil) {
+    public void setEstadoCivil(int estadoCivil) {
         this.estadoCivil = estadoCivil;
     }
 
