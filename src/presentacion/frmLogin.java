@@ -169,9 +169,9 @@ public class frmLogin extends javax.swing.JFrame {
         cuenta=listaC.obtenerCuenta(listaC.buscarPorNumeroCuenta(numeroDeCuenta));
         if(cuenta.validarClave(correoElectronico, clave))
         {
-            frmPrincipal FrmPrincipal= new frmPrincipal(cuenta);
-            FrmPrincipal.setLocationRelativeTo(null);
-            FrmPrincipal.setVisible(true);
+            FrmPrincipal frmPrincipal= new FrmPrincipal(cuenta);
+            frmPrincipal.setLocationRelativeTo(null);
+            frmPrincipal.setVisible(true);
             this.dispose();
         }
         else
