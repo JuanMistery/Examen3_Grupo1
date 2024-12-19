@@ -14,7 +14,7 @@ import javax.swing.*;
  * @author USUARIO
  */
 public class frmLogin extends javax.swing.JFrame {
-
+    ListaCuentas listaC = new ListaCuentas();
     /**
      * Creates new form loginSesion
      */
@@ -75,6 +75,12 @@ public class frmLogin extends javax.swing.JFrame {
         btnSalir.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btnSalirActionPerformed(evt);
+            }
+        });
+
+        txtClave.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyReleased(java.awt.event.KeyEvent evt) {
+                txtClaveKeyReleased(evt);
             }
         });
 
@@ -187,26 +193,39 @@ public class frmLogin extends javax.swing.JFrame {
 
     private void btnIngresarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnIngresarActionPerformed
         String correoElectronico,clave, numeroDeCuenta,archivo;
-        archivo="DatosCuentas.dat";
-        ListaCuentas listaC = ListaCuentas.cargarCuentas(archivo);
+        archivo="datos/DatosCuentas.dat";
+        listaC.cargarCuentas(archivo);
         Cliente cliente;
         Cuenta cuenta;
         correoElectronico=txtCorreoElectronico.getText();
         clave=txtClave.getText();
         numeroDeCuenta=txtNumeroDeCuenta.getText();
-        cuenta=listaC.obtenerCuenta(listaC.buscarPorNumeroCuenta(numeroDeCuenta));
-        if(cuenta.validarClave(correoElectronico, clave))
-        {
-            FrmPrincipal frmPrincipal= new FrmPrincipal(cuenta);
-            frmPrincipal.setLocationRelativeTo(null);
-            frmPrincipal.setVisible(true);
-            this.dispose();
-        }
-        else
-        {
-            
+        int posicion = listaC.buscarPorNumeroCuenta(numeroDeCuenta);
+        if(posicion!=-1){
+            cuenta=listaC.obtenerCuenta(listaC.buscarPorNumeroCuenta(numeroDeCuenta));
+            if(cuenta.validarClave(correoElectronico, clave))
+            {
+                FrmPrincipal frmPrincipal= new FrmPrincipal(cuenta);
+                frmPrincipal.setLocationRelativeTo(null);
+                frmPrincipal.setVisible(true);
+                this.dispose();
+            }
+            else
+            {
+                JOptionPane.showMessageDialog(null, "ATENCION: \nClave o correo incorrecto", "Cuenta no encontrada: ", JOptionPane.INFORMATION_MESSAGE);
+            } 
+        } else{
+            JOptionPane.showMessageDialog(null, "ATENCION: \nCuenta no encontrada", "Cuenta no encontrada: ", JOptionPane.INFORMATION_MESSAGE);
         }
     }//GEN-LAST:event_btnIngresarActionPerformed
+
+    private void txtClaveKeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txtClaveKeyReleased
+        if(!txtNumeroDeCuenta.getText().isEmpty()&&
+                !txtCorreoElectronico.getText().isEmpty()&&
+                !txtClave.getText().isEmpty())
+            btnIngresar.setEnabled(true);
+        else btnIngresar.setEnabled(false);
+    }//GEN-LAST:event_txtClaveKeyReleased
 
     /**
      * @param args the command line arguments
