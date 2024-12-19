@@ -91,11 +91,13 @@ public class ListaCuentas {
     
     public static ListaCuentas cargarCuentas(String Archivo)
     {
+        ListaCuentas lista = null;
         try (ObjectInputStream ois = new ObjectInputStream(new FileInputStream(Archivo))) {
-            return (ListaCuentas) ois.readObject();
+            lista = (ListaCuentas) ois.readObject();
         } catch (IOException | ClassNotFoundException e) {
-            return null; // Devuelve null en caso de error
+            lista = new ListaCuentas(); // Devuelve null en caso de error
         }
+        return lista;
     }
     
 }
