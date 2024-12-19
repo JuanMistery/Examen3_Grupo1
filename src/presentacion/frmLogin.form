@@ -29,7 +29,7 @@
     </DimensionLayout>
     <DimensionLayout dim="1">
       <Group type="103" groupAlignment="0" attributes="0">
-          <Component id="jDesktopPane1" alignment="0" max="32767" attributes="0"/>
+          <Component id="jDesktopPane1" alignment="1" max="32767" attributes="0"/>
       </Group>
     </DimensionLayout>
   </Layout>
@@ -43,6 +43,9 @@
           <Color blue="ff" green="ff" red="ff" type="rgb"/>
         </Property>
       </Properties>
+      <AuxValues>
+        <AuxValue name="JavaCodeGenerator_CreateCodeCustom" type="java.lang.String" value="new javax.swing.JDesktopPane(){&#xa;    private Image fondo = new ImageIcon(getClass().getResource(&quot;/imagenes/ImagenFondo.jpg&quot;)).getImage();&#xa;&#xa;    @Override&#xa;    protected void paintComponent(Graphics g)&#xa;    {&#xa;        super.paintComponent(g);&#xa;        if(fondo != null)&#xa;        {&#xa;            g.drawImage(fondo,0,0,getWidth(),getHeight(),this);&#xa;        }&#xa;    }&#xa;}"/>
+      </AuxValues>
 
       <Layout>
         <DimensionLayout dim="0">

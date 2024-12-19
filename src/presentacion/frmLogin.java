@@ -7,6 +7,7 @@ package presentacion;
 import entidades.*;
 import datos.*;
 import java.awt.*;
+import javax.swing.*;
 
 /**
  *
@@ -19,10 +20,7 @@ public class frmLogin extends javax.swing.JFrame {
      */
     public frmLogin() {
         initComponents();
-        Image icono = Toolkit.getDefaultToolkit().getImage(getClass().getResource("/imagenes/logo_interbank.jpg"));
-        setIconImage(icono);
-        jDesktopPane1.setOpaque(true);
-        jDesktopPane1.setBackground(new java.awt.Color(255, 255, 255));
+        setIconImage(new ImageIcon(getClass().getResource("/imagenes/logo_interbank.jpg")).getImage());
     }
 
     /**
@@ -34,7 +32,19 @@ public class frmLogin extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
-        jDesktopPane1 = new javax.swing.JDesktopPane();
+        jDesktopPane1 = new javax.swing.JDesktopPane(){
+            private Image fondo = new ImageIcon(getClass().getResource("/imagenes/ImagenFondo.jpg")).getImage();
+
+            @Override
+            protected void paintComponent(Graphics g)
+            {
+                super.paintComponent(g);
+                if(fondo != null)
+                {
+                    g.drawImage(fondo,0,0,getWidth(),getHeight(),this);
+                }
+            }
+        };
         txtCorreoElectronico = new javax.swing.JTextField();
         btnRegistrar = new javax.swing.JButton();
         lblCorreoElectronico = new javax.swing.JLabel();
@@ -154,7 +164,7 @@ public class frmLogin extends javax.swing.JFrame {
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jDesktopPane1)
+            .addComponent(jDesktopPane1, javax.swing.GroupLayout.Alignment.TRAILING)
         );
 
         pack();
