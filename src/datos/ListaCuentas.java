@@ -11,6 +11,8 @@ import java.io.*;
  * @author JuanMistery
  */
 public class ListaCuentas implements Serializable{
+    int cantidadCuentasAhorro=0;
+    int cantidadCuentasCorriente=0;
     private ArrayList<Cuenta> listaCuentas = new ArrayList<>();
 
     public ListaCuentas() {
@@ -23,6 +25,9 @@ public class ListaCuentas implements Serializable{
     public boolean agregarCuenta(Cuenta cuenta) {
         if(cuenta != null) {
             listaCuentas.add(cuenta);
+            if(cuenta.getTipoCuenta()==1)
+                cantidadCuentasAhorro++;
+            else cantidadCuentasCorriente++;
             return true;
         }
         return false;
@@ -80,13 +85,16 @@ public class ListaCuentas implements Serializable{
     }
     
     public boolean guardarEnArchivo(String Archivo) {
+        actualizarNumeroCuentas();
         try (ObjectOutputStream oos = new ObjectOutputStream(new FileOutputStream(Archivo))) {
             oos.writeObject(this); // Serializa y guarda el objeto actual
+            System.out.println("Ahorro: " + cantidadCuentasAhorro + "Corriente: "+ cantidadCuentasCorriente);
             return true; // Éxito
         } catch (IOException e) {
             System.out.println("Ocurrio un error: ");
             return false; // Fallo
         }
+        
     }
 
     
@@ -94,11 +102,30 @@ public class ListaCuentas implements Serializable{
     {
         ListaCuentas lista = null;
         try (ObjectInputStream ois = new ObjectInputStream(new FileInputStream(Archivo))) {
-            lista = (ListaCuentas) ois.readObject();
+            lista = (ListaCuentas) ois.readObject(); // Cargar la lista de cuentas desde el archivo
         } catch (IOException | ClassNotFoundException e) {
-            lista = new ListaCuentas(); // Devuelve null en caso de error
+            System.out.println("No se pudo cargar el archivo o el archivo está vacío. Se devolverá una lista vacía.");
+            lista = new ListaCuentas(); 
         }
+        
+        
+        
         return lista;
+    }
+    
+    public void actualizarNumeroCuentas(){
+        Cuenta.setTotalCuentasAhorro(cantidadCuentasAhorro);
+        Cuenta.setTotalCuentasCorriente(cantidadCuentasCorriente);
+    }
+    
+    public void mostrarCuentas(){
+        Cuenta cuentaB;
+        for(int i=0; i<listaCuentas.size(); i++) {
+            cuentaB = listaCuentas.get(i);
+            System.out.println(cuentaB.toString());
+                
+        }
+        
     }
     
 }

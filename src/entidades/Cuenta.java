@@ -157,7 +157,7 @@ public abstract class Cuenta implements ImptoTransaccionesFinancieras,  Serializ
         int tipo=titularDeCuenta.getTipoCliente();
         if(tipo==1)
         {
-            if(this.clave==clave&&titularDeCuenta.getCorreoElectronico()==correoElectronico)
+            if(this.clave.compareTo(clave)==0&&titularDeCuenta.getCorreoElectronico().compareTo(correoElectronico)==0)
             {
                 return true;
             }
@@ -165,7 +165,7 @@ public abstract class Cuenta implements ImptoTransaccionesFinancieras,  Serializ
         }
         else
         {
-            if(this.clave==clave&&((ClienteJuridico)titularDeCuenta).getCorreoElectronicoJuridico()==correoElectronico)
+            if(this.clave.compareTo(clave)==0&&((ClienteJuridico)titularDeCuenta).getCorreoElectronicoJuridico().compareTo(correoElectronico)==0)
             {
                 return true;
             }
