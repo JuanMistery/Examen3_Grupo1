@@ -6,6 +6,7 @@ package presentacion;
 
 import entidades.*;
 import datos.*;
+import java.awt.*;
 
 /**
  *
@@ -18,6 +19,10 @@ public class frmLogin extends javax.swing.JFrame {
      */
     public frmLogin() {
         initComponents();
+        Image icono = Toolkit.getDefaultToolkit().getImage(getClass().getResource("/imagenes/logo_interbank.jpg"));
+        setIconImage(icono);
+        jDesktopPane1.setOpaque(true);
+        jDesktopPane1.setBackground(new java.awt.Color(255, 255, 255));
     }
 
     /**
@@ -39,9 +44,13 @@ public class frmLogin extends javax.swing.JFrame {
         btnIngresar = new javax.swing.JButton();
         lblNroCuenta = new javax.swing.JLabel();
         lblClave = new javax.swing.JLabel();
+        jLabel1 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setTitle("Inicio de Sesion");
+
+        jDesktopPane1.setBackground(new java.awt.Color(131, 247, 161));
+        jDesktopPane1.setForeground(new java.awt.Color(255, 255, 255));
 
         btnRegistrar.setText("Registrar");
         btnRegistrar.addActionListener(new java.awt.event.ActionListener() {
@@ -60,6 +69,7 @@ public class frmLogin extends javax.swing.JFrame {
         });
 
         btnIngresar.setText("Ingresar");
+        btnIngresar.setEnabled(false);
         btnIngresar.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btnIngresarActionPerformed(evt);
@@ -70,6 +80,9 @@ public class frmLogin extends javax.swing.JFrame {
 
         lblClave.setText("Clave De 6 Digitos");
 
+        jLabel1.setFont(new java.awt.Font("Segoe UI", 1, 24)); // NOI18N
+        jLabel1.setText("BIENVENIDO ");
+
         jDesktopPane1.setLayer(txtCorreoElectronico, javax.swing.JLayeredPane.DEFAULT_LAYER);
         jDesktopPane1.setLayer(btnRegistrar, javax.swing.JLayeredPane.DEFAULT_LAYER);
         jDesktopPane1.setLayer(lblCorreoElectronico, javax.swing.JLayeredPane.DEFAULT_LAYER);
@@ -79,35 +92,40 @@ public class frmLogin extends javax.swing.JFrame {
         jDesktopPane1.setLayer(btnIngresar, javax.swing.JLayeredPane.DEFAULT_LAYER);
         jDesktopPane1.setLayer(lblNroCuenta, javax.swing.JLayeredPane.DEFAULT_LAYER);
         jDesktopPane1.setLayer(lblClave, javax.swing.JLayeredPane.DEFAULT_LAYER);
+        jDesktopPane1.setLayer(jLabel1, javax.swing.JLayeredPane.DEFAULT_LAYER);
 
         javax.swing.GroupLayout jDesktopPane1Layout = new javax.swing.GroupLayout(jDesktopPane1);
         jDesktopPane1.setLayout(jDesktopPane1Layout);
         jDesktopPane1Layout.setHorizontalGroup(
             jDesktopPane1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jDesktopPane1Layout.createSequentialGroup()
+            .addGroup(jDesktopPane1Layout.createSequentialGroup()
                 .addContainerGap(33, Short.MAX_VALUE)
-                .addGroup(jDesktopPane1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                    .addComponent(btnSalir)
-                    .addGroup(jDesktopPane1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                        .addComponent(txtClave)
-                        .addComponent(txtNumeroDeCuenta)
-                        .addComponent(txtCorreoElectronico)
-                        .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jDesktopPane1Layout.createSequentialGroup()
-                            .addComponent(btnRegistrar, javax.swing.GroupLayout.PREFERRED_SIZE, 150, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 57, Short.MAX_VALUE)
-                            .addComponent(btnIngresar, javax.swing.GroupLayout.PREFERRED_SIZE, 150, javax.swing.GroupLayout.PREFERRED_SIZE))
-                        .addGroup(jDesktopPane1Layout.createSequentialGroup()
-                            .addGroup(jDesktopPane1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                .addGroup(jDesktopPane1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jDesktopPane1Layout.createSequentialGroup()
+                        .addGroup(jDesktopPane1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                            .addComponent(btnSalir)
+                            .addGroup(jDesktopPane1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                                .addComponent(txtClave)
+                                .addComponent(txtNumeroDeCuenta)
+                                .addComponent(txtCorreoElectronico)
+                                .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jDesktopPane1Layout.createSequentialGroup()
+                                    .addComponent(btnRegistrar, javax.swing.GroupLayout.PREFERRED_SIZE, 150, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                    .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 57, Short.MAX_VALUE)
+                                    .addComponent(btnIngresar, javax.swing.GroupLayout.PREFERRED_SIZE, 150, javax.swing.GroupLayout.PREFERRED_SIZE))
                                 .addComponent(lblCorreoElectronico)
                                 .addComponent(lblClave)
-                                .addComponent(lblNroCuenta))
-                            .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED))))
-                .addGap(15, 15, 15))
+                                .addComponent(lblNroCuenta)))
+                        .addGap(15, 15, 15))
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jDesktopPane1Layout.createSequentialGroup()
+                        .addComponent(jLabel1)
+                        .addGap(124, 124, 124))))
         );
         jDesktopPane1Layout.setVerticalGroup(
             jDesktopPane1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jDesktopPane1Layout.createSequentialGroup()
-                .addContainerGap(97, Short.MAX_VALUE)
+                .addContainerGap(34, Short.MAX_VALUE)
+                .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 32, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(31, 31, 31)
                 .addComponent(lblCorreoElectronico)
                 .addGap(18, 18, 18)
                 .addComponent(txtCorreoElectronico, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -222,6 +240,7 @@ public class frmLogin extends javax.swing.JFrame {
     private javax.swing.JButton btnRegistrar;
     private javax.swing.JButton btnSalir;
     private javax.swing.JDesktopPane jDesktopPane1;
+    private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel lblClave;
     private javax.swing.JLabel lblCorreoElectronico;
     private javax.swing.JLabel lblNroCuenta;
