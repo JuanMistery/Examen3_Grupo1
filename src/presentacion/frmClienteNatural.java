@@ -7,6 +7,7 @@ package presentacion;
 import entidades.*;
 import datos.*;
 import java.util.GregorianCalendar;
+import javax.swing.JOptionPane;
 
 /**
  *
@@ -23,6 +24,8 @@ public class frmClienteNatural extends javax.swing.JFrame {
         initComponents();
         cuentaB = cuenta;
     }
+    
+    
 
     /**
      * This method is called from within the constructor to initialize the form.
@@ -252,6 +255,12 @@ public class frmClienteNatural extends javax.swing.JFrame {
                 
             }
         }
+        JOptionPane.showMessageDialog(null, "Registrado con exito:  \nSu numero de cuenta es: " + cuentaB.getNumeroCuenta(), "Cuenta no encontrada: ", JOptionPane.INFORMATION_MESSAGE);
+        
+        frmLogin FrmLogin = new frmLogin();
+        FrmLogin.setVisible(true);
+        this.dispose();
+        
     }//GEN-LAST:event_btnRegistrarActionPerformed
 
     /**
