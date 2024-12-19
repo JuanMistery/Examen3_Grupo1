@@ -10,7 +10,7 @@ import java.io.*;
  *
  * @author JuanMistery
  */
-public class ListaCuentas {
+public class ListaCuentas implements Serializable{
     private ArrayList<Cuenta> listaCuentas = new ArrayList<>();
 
     public ListaCuentas() {
@@ -84,6 +84,7 @@ public class ListaCuentas {
             oos.writeObject(this); // Serializa y guarda el objeto actual
             return true; // Éxito
         } catch (IOException e) {
+            System.out.println("Ocurrio un error: ");
             return false; // Fallo
         }
     }

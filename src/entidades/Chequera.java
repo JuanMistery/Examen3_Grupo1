@@ -4,12 +4,14 @@
  */
 package entidades;
 
+import java.io.Serializable;
+
 
 /**
  *
  * @author ramos-
  */
-public class Chequera {
+public class Chequera implements Serializable{
     private int limiteCheques;
     private String numeroChequera;
     private float comisionPorCheques;

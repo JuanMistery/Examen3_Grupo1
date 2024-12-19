@@ -4,11 +4,13 @@
  */
 package entidades;
 
+import java.io.Serializable;
+
 /**
  *
  * @author 22ram
  */
-public class CuentaCorriente extends Cuenta{
+public class CuentaCorriente extends Cuenta implements Serializable{
     private float limiteDeGiro;
     private int LimiteDeCheques;
 

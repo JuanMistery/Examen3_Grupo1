@@ -4,13 +4,14 @@
  */
 package entidades;
 
+import java.io.Serializable;
 import java.util.*;
 
 /**
  *
  * @author 22ram
  */
-public abstract class Cuenta implements ImptoTransaccionesFinancieras{
+public abstract class Cuenta implements ImptoTransaccionesFinancieras,  Serializable{
     private String numeroCuenta;
     private float saldoCuenta;
     private String clave;
@@ -61,7 +62,7 @@ public abstract class Cuenta implements ImptoTransaccionesFinancieras{
             num /= 10;
         }
         numDig++;
-        for(int i=0;i<10-numDig; i++)
+        for(int i=0;i<5-numDig; i++)
             numCuenta += "0";
         numCuenta += dato;        
         return numCuenta;

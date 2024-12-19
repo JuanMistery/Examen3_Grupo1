@@ -14,7 +14,7 @@ import javax.swing.*;
  * @author USUARIO
  */
 public class frmLogin extends javax.swing.JFrame {
-    ListaCuentas listaC = new ListaCuentas();
+    private ListaCuentas listaC = ListaCuentas.cargarCuentas("src/datos/DatosCuentas.dat");
     /**
      * Creates new form loginSesion
      */
@@ -192,9 +192,7 @@ public class frmLogin extends javax.swing.JFrame {
     }//GEN-LAST:event_btnSalirActionPerformed
 
     private void btnIngresarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnIngresarActionPerformed
-        String correoElectronico,clave, numeroDeCuenta,archivo;
-        archivo="datos/DatosCuentas.dat";
-        listaC.cargarCuentas(archivo);
+        String correoElectronico,clave, numeroDeCuenta;
         Cliente cliente;
         Cuenta cuenta;
         correoElectronico=txtCorreoElectronico.getText();
@@ -202,7 +200,7 @@ public class frmLogin extends javax.swing.JFrame {
         numeroDeCuenta=txtNumeroDeCuenta.getText();
         int posicion = listaC.buscarPorNumeroCuenta(numeroDeCuenta);
         if(posicion!=-1){
-            cuenta=listaC.obtenerCuenta(listaC.buscarPorNumeroCuenta(numeroDeCuenta));
+            cuenta=listaC.obtenerCuenta(posicion);
             if(cuenta.validarClave(correoElectronico, clave))
             {
                 FrmPrincipal frmPrincipal= new FrmPrincipal(cuenta);
