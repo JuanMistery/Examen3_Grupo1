@@ -240,7 +240,7 @@ public class frmClienteNatural extends javax.swing.JFrame {
         String correoElectronico = txtCorreoElectronico.getText();
         int dia = cmbDia.getSelectedIndex();
         int mes = cmbMes.getSelectedIndex();
-        int anio = Integer.parseInt(cmbAnio.getName());
+        int anio = Integer.parseInt(cmbAnio.getSelectedItem().toString());
         GregorianCalendar fechaNacimiento = new GregorianCalendar();
         fechaNacimiento.set(anio,mes,dia);
         ClienteB = new ClienteNatural(tipoDocumento,documento,estadoCivil,fechaNacimiento,nombres,apellidos,direccion,telefono,correoElectronico);
