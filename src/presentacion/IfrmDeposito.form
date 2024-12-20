@@ -84,6 +84,8 @@
     <Component class="javax.swing.JTextField" name="txtSaldoDeposito">
       <Events>
         <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="txtSaldoDepositoActionPerformed"/>
+        <EventHandler event="keyReleased" listener="java.awt.event.KeyListener" parameters="java.awt.event.KeyEvent" handler="txtSaldoDepositoKeyReleased"/>
+        <EventHandler event="keyTyped" listener="java.awt.event.KeyListener" parameters="java.awt.event.KeyEvent" handler="txtSaldoDepositoKeyTyped"/>
       </Events>
     </Component>
     <Component class="javax.swing.JButton" name="btnDepositar">

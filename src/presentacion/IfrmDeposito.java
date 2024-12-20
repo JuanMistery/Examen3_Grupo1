@@ -3,17 +3,20 @@
  * Click nbfs://nbhost/SystemFileSystem/Templates/GUIForms/JInternalFrame.java to edit this template
  */
 package presentacion;
+import entidades.Cuenta;
+import javax.swing.*;
 
 /**
  *
  * @author ramos
  */
 public class IfrmDeposito extends javax.swing.JInternalFrame {
-
+    Cuenta cuenta;
     /**
      * Creates new form IfrmDepositar
      */
-    public IfrmDeposito() {
+    public IfrmDeposito(Cuenta cuenta) {
+        this.cuenta = cuenta;
         initComponents();
     }
 
@@ -41,6 +44,14 @@ public class IfrmDeposito extends javax.swing.JInternalFrame {
         txtSaldoDeposito.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 txtSaldoDepositoActionPerformed(evt);
+            }
+        });
+        txtSaldoDeposito.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyReleased(java.awt.event.KeyEvent evt) {
+                txtSaldoDepositoKeyReleased(evt);
+            }
+            public void keyTyped(java.awt.event.KeyEvent evt) {
+                txtSaldoDepositoKeyTyped(evt);
             }
         });
 
@@ -107,12 +118,30 @@ public class IfrmDeposito extends javax.swing.JInternalFrame {
     }//GEN-LAST:event_txtSaldoDepositoActionPerformed
 
     private void btnDepositarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnDepositarActionPerformed
-        // TODO add your handling code here:
+        float montoDeposito = Float.parseFloat(txtSaldoDeposito.getText());
+        if(cuenta.realizarDeposito(montoDeposito)){
+            JOptionPane.showMessageDialog(this, "Deposito realizado con exito ", "Deposito", 2);
+            
+        }
+        
+        this.dispose();
+        
     }//GEN-LAST:event_btnDepositarActionPerformed
 
     private void btnVolverActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnVolverActionPerformed
-        // TODO add your handling code here:
+        this.dispose();
     }//GEN-LAST:event_btnVolverActionPerformed
+
+    private void txtSaldoDepositoKeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txtSaldoDepositoKeyReleased
+        // TODO add your handling code here:
+    }//GEN-LAST:event_txtSaldoDepositoKeyReleased
+
+    private void txtSaldoDepositoKeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txtSaldoDepositoKeyTyped
+        char c = evt.getKeyChar();
+        if (!Character.isDigit(c)) {
+            evt.consume();
+        }
+    }//GEN-LAST:event_txtSaldoDepositoKeyTyped
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
