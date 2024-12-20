@@ -107,10 +107,18 @@ public class ListaCuentas implements Serializable{
             System.out.println("No se pudo cargar el archivo o el archivo está vacío. Se devolverá una lista vacía.");
             lista = new ListaCuentas(); 
         }
-        
-        
-        
         return lista;
+    }
+    
+    public void actualizarLista(Cuenta cuenta)
+    {
+        for(int i=0;i<listaCuentas.size();i++)
+        {
+            if(listaCuentas.get(i).getNumeroCuenta().equalsIgnoreCase(cuenta.getNumeroCuenta()))
+            {
+                listaCuentas.set(i, cuenta);
+            }
+        }
     }
     
     public void actualizarNumeroCuentas(){

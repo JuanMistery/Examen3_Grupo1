@@ -3,6 +3,7 @@
  * Click nbfs://nbhost/SystemFileSystem/Templates/GUIForms/JInternalFrame.java to edit this template
  */
 package presentacion;
+import datos.ListaCuentas;
 import entidades.Cuenta;
 import javax.swing.*;
 
@@ -11,7 +12,10 @@ import javax.swing.*;
  * @author ramos
  */
 public class IfrmDeposito extends javax.swing.JInternalFrame {
+    
     Cuenta cuenta;
+    private ListaCuentas listaC = ListaCuentas.cargarCuentas("src/datos/DatosCuentas.dat");
+    
     /**
      * Creates new form IfrmDepositar
      */
@@ -103,7 +107,8 @@ public class IfrmDeposito extends javax.swing.JInternalFrame {
         float montoDeposito = Float.parseFloat(txtSaldoDeposito.getText());
         if(cuenta.realizarDeposito(montoDeposito)){
             JOptionPane.showMessageDialog(this, "Deposito realizado con exito ", "Deposito", 2);
-            
+            listaC.actualizarLista(cuenta);
+            listaC.guardarEnArchivo("src/datos/DatosCuentas.dat");
         }
         this.dispose();
         

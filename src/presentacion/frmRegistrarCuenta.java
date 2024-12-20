@@ -7,6 +7,7 @@ package presentacion;
 import java.awt.*;
 import entidades.*;
 import java.util.ArrayList;
+import javax.swing.*;
 
 /**
  *
@@ -40,7 +41,19 @@ public class frmRegistrarCuenta extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
-        jDesktopPane1 = new javax.swing.JDesktopPane();
+        jDesktopPane1 = new javax.swing.JDesktopPane(){
+            private Image fondo = new ImageIcon(getClass().getResource("/imagenes/ImagenFondo.jpg")).getImage();
+
+            @Override
+            protected void paintComponent(Graphics g)
+            {
+                super.paintComponent(g);
+                if(fondo != null)
+                {
+                    g.drawImage(fondo,0,0,getWidth(),getHeight(),this);
+                }
+            }
+        };
         panDatosUnicos = new javax.swing.JPanel(cardLayout);
         lblClave = new javax.swing.JLabel();
         txtClave = new javax.swing.JTextField();
