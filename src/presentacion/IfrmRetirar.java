@@ -4,17 +4,23 @@
  */
 package presentacion;
 
+import entidades.Cuenta;
+import javax.swing.JOptionPane;
+
 /**
  *
  * @author ramos
  */
 public class IfrmRetirar extends javax.swing.JInternalFrame {
-
+Cuenta cuenta;
     /**
      * Creates new form IfrmRetirar
      */
-    public IfrmRetirar() {
+    public IfrmRetirar(Cuenta cuenta) {
         initComponents();
+        
+        this.cuenta = cuenta;
+        lblSaldoCuenta.setText(String.valueOf(cuenta.getSaldoCuenta()));
     }
 
     /**
@@ -53,6 +59,11 @@ public class IfrmRetirar extends javax.swing.JInternalFrame {
         txtSaldoRetiro.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 txtSaldoRetiroActionPerformed(evt);
+            }
+        });
+        txtSaldoRetiro.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyTyped(java.awt.event.KeyEvent evt) {
+                txtSaldoRetiroKeyTyped(evt);
             }
         });
 
@@ -111,10 +122,11 @@ public class IfrmRetirar extends javax.swing.JInternalFrame {
                 .addContainerGap()
                 .addComponent(lblRetiro)
                 .addGap(23, 23, 23)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(lblSaldoActual)
-                    .addComponent(lblSaldoCuenta, javax.swing.GroupLayout.PREFERRED_SIZE, 16, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(btnOcultar, javax.swing.GroupLayout.PREFERRED_SIZE, 20, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(btnOcultar, javax.swing.GroupLayout.PREFERRED_SIZE, 20, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                        .addComponent(lblSaldoActual)
+                        .addComponent(lblSaldoCuenta, javax.swing.GroupLayout.PREFERRED_SIZE, 16, javax.swing.GroupLayout.PREFERRED_SIZE)))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(jSeparator1, javax.swing.GroupLayout.PREFERRED_SIZE, 3, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(31, 31, 31)
@@ -136,12 +148,23 @@ public class IfrmRetirar extends javax.swing.JInternalFrame {
     }//GEN-LAST:event_txtSaldoRetiroActionPerformed
 
     private void btnRetirarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnRetirarActionPerformed
-        // TODO add your handling code here:
+        float montoRetiro = Float.parseFloat(txtSaldoRetiro.getText());
+        if(cuenta.realizarRetiro(montoRetiro)){
+            JOptionPane.showMessageDialog(null, "Dinero retirado");
+        }
+        else JOptionPane.showMessageDialog(null, "No cuenta con suficiente saldo ");
     }//GEN-LAST:event_btnRetirarActionPerformed
 
     private void btnVolverActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnVolverActionPerformed
-        // TODO add your handling code here:
+        this.dispose();
     }//GEN-LAST:event_btnVolverActionPerformed
+
+    private void txtSaldoRetiroKeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txtSaldoRetiroKeyTyped
+        char c = evt.getKeyChar();
+        if (!Character.isDigit(c)) {
+            evt.consume();
+        }
+    }//GEN-LAST:event_txtSaldoRetiroKeyTyped
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables

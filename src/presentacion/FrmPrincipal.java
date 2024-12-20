@@ -182,7 +182,7 @@ public class FrmPrincipal extends javax.swing.JFrame {
     }//GEN-LAST:event_mniCerrarSesionActionPerformed
 
     private void mniRetiroActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_mniRetiroActionPerformed
-        IfrmRetirar IfrmRetiro = new IfrmRetirar();
+        IfrmRetirar IfrmRetiro = new IfrmRetirar(cuentaB);
         CentrarIF(IfrmRetiro);
     }//GEN-LAST:event_mniRetiroActionPerformed
 

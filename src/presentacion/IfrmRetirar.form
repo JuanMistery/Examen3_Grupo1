@@ -66,10 +66,12 @@
               <EmptySpace max="-2" attributes="0"/>
               <Component id="lblRetiro" min="-2" max="-2" attributes="0"/>
               <EmptySpace min="-2" pref="23" max="-2" attributes="0"/>
-              <Group type="103" groupAlignment="3" attributes="0">
-                  <Component id="lblSaldoActual" alignment="3" min="-2" max="-2" attributes="0"/>
-                  <Component id="lblSaldoCuenta" alignment="3" min="-2" pref="16" max="-2" attributes="0"/>
+              <Group type="103" groupAlignment="0" attributes="0">
                   <Component id="btnOcultar" alignment="0" min="-2" pref="20" max="-2" attributes="0"/>
+                  <Group type="103" groupAlignment="3" attributes="0">
+                      <Component id="lblSaldoActual" alignment="3" min="-2" max="-2" attributes="0"/>
+                      <Component id="lblSaldoCuenta" alignment="3" min="-2" pref="16" max="-2" attributes="0"/>
+                  </Group>
               </Group>
               <EmptySpace max="-2" attributes="0"/>
               <Component id="jSeparator1" min="-2" pref="3" max="-2" attributes="0"/>
@@ -133,6 +135,7 @@
     <Component class="javax.swing.JTextField" name="txtSaldoRetiro">
       <Events>
         <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="txtSaldoRetiroActionPerformed"/>
+        <EventHandler event="keyTyped" listener="java.awt.event.KeyListener" parameters="java.awt.event.KeyEvent" handler="txtSaldoRetiroKeyTyped"/>
       </Events>
     </Component>
     <Component class="javax.swing.JButton" name="btnRetirar">
