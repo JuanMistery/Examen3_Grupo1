@@ -16,7 +16,7 @@ import javax.swing.JOptionPane;
 public class frmClienteNatural extends javax.swing.JFrame {
 
     private Cuenta cuentaB;
-    private ListaCuentas listaC = ListaCuentas.cargarCuentas("DatosCuentas.dat");
+    private ListaCuentas listaC = ListaCuentas.cargarCuentas("src/datos/DatosCuentas.dat");
     /**
      * Creates new form frmClienteNatural
      */
@@ -250,7 +250,7 @@ public class frmClienteNatural extends javax.swing.JFrame {
         cuentaB.setTitularDeCuenta(ClienteB);
         if(listaC.agregarCuenta(cuentaB))
         {
-            if(listaC.guardarEnArchivo("DatosCuentas.dat"))
+            if(listaC.guardarEnArchivo("src/datos/DatosCuentas.dat"))
             {
                 
             }

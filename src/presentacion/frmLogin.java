@@ -92,7 +92,6 @@ public frmLogin() {
         });
 
         btnIngresar.setText("Ingresar");
-        btnIngresar.setEnabled(false);
         btnIngresar.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btnIngresarActionPerformed(evt);

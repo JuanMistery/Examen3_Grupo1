@@ -16,7 +16,7 @@ import javax.swing.*;
 public class FrmClienteJuridico extends javax.swing.JFrame {
 
     private Cuenta cuentaB;
-    private ListaCuentas listaC = ListaCuentas.cargarCuentas("DatosCuentas.dat");
+    private ListaCuentas listaC = ListaCuentas.cargarCuentas("src/datos/DatosCuentas.dat");
     /**
      * Creates new form frmRegistroClienteJuridico
      */
@@ -367,7 +367,7 @@ public class FrmClienteJuridico extends javax.swing.JFrame {
         cuentaB.setTitularDeCuenta(clienteB);
         if(listaC.agregarCuenta(cuentaB))
         {
-            if(listaC.guardarEnArchivo("DatosCuentas.dat"))
+            if(listaC.guardarEnArchivo("src/datos/DatosCuentas.dat"))
             {
                 
             }
