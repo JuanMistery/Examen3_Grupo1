@@ -197,7 +197,7 @@ public class FrmPrincipal extends javax.swing.JFrame {
     }//GEN-LAST:event_mniDepositoActionPerformed
 
     private void mniTransferenciaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_mniTransferenciaActionPerformed
-        IfrmTransferencia ifrmTransferencia = new IfrmTransferencia();
+        IfrmTransferencia ifrmTransferencia = new IfrmTransferencia(cuentaB);
         CentrarIF(ifrmTransferencia);
     }//GEN-LAST:event_mniTransferenciaActionPerformed
 
