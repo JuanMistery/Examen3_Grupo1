@@ -24,7 +24,6 @@ public class panBeneficiarios extends javax.swing.JPanel {
         listaP= new ArrayList<>();
         index=0;
     }
-
     /**
      * This method is called from within the constructor to initialize the form.
      * WARNING: Do NOT modify this code. The content of this method is always
@@ -163,19 +162,21 @@ public class panBeneficiarios extends javax.swing.JPanel {
          {
              if(camposCompletos())
              {
+               try {
                 Persona persona = new Persona(txtNombresBeneficiario.getText(), txtApellidosBeneficiario.getText(), txtDireccionBeneficiario.getText(), txtTelefonoBeneficiario.getText(), txtCorreoElectronicoBeneficiario.getText());
                 listaP.add(persona);
                 index++;
                 limpiarCampos();
                 btnAtras.setEnabled(index>0);
-            }
-            else
+            }catch (Exception e) {
+                    JOptionPane.showMessageDialog(this, "Error al agregar beneficiario: " + e.getMessage(), "Error", JOptionPane.ERROR_MESSAGE);
+                }
+             }else
             {
                 JOptionPane.showMessageDialog(this, "Por favor, complete todos los campos.");
             }
         }
     }
-    
     private int getTamanio()
     {
         return (listaP != null) ? listaP.size() : 0;
