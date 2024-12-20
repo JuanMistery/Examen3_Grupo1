@@ -3,20 +3,54 @@
  * Click nbfs://nbhost/SystemFileSystem/Templates/GUIForms/JInternalFrame.java to edit this template
  */
 package presentacion;
-
+import entidades.*;
+import entidades.Cuenta.Operaciones;
+import java.util.ArrayList;
+import javax.swing.table.DefaultTableModel;
 /**
  *
  * @author JuanMistery
  */
 public class ifrmOperaciones extends javax.swing.JInternalFrame {
 
-    /**
-     * Creates new form ifrmOperaciones
-     */
-    public ifrmOperaciones() {
-        initComponents();
-    }
+    private ArrayList<Operaciones> listaOperaciones;
 
+       public ifrmOperaciones(Cuenta cuenta) {
+        initComponents();
+        listaOperaciones = new ArrayList<>(cuenta.getOperaciones());
+        
+        DefaultTableModel model = new DefaultTableModel();
+        model.addColumn("Número de Operación");
+        model.addColumn("Fecha de Operación");
+        model.addColumn("Tipo de Operación");
+        model.addColumn("Monto de Operación");
+
+                for (Operaciones operacion : listaOperaciones) {
+            String numeroOperacion = operacion.getNumeroOperacion();
+            String fechaOperacion = operacion.getFechaOperacionCorta();
+            int tipoOperacion = operacion.getTipoOperacion();
+            float montoOperacion = operacion.getMontoOperacion();
+
+            model.addRow(new Object[]{numeroOperacion, fechaOperacion, tipoOperacion, montoOperacion});
+        }
+         jTable1.setModel(model);
+    }
+    private String obtenerNombreTipo(int tipoOperacion) {
+        switch (tipoOperacion) {
+            case 1:
+                return "Depósito";
+            case 2:
+                return "Retiro";
+            case 3:
+                return "Transferencia";
+            case 4:
+                return "ITF";
+            case 5:
+                return "Interés Mensual";
+            default:
+                return "Desconocido";
+        }
+    }
     /**
      * This method is called from within the constructor to initialize the form.
      * WARNING: Do NOT modify this code. The content of this method is always
