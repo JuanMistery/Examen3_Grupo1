@@ -270,7 +270,10 @@ public abstract class Cuenta implements ImptoTransaccionesFinancieras,  Serializ
             numCuenta += dato;        
             return numCuenta;
         }
-            public boolean realizarDeposito(float montoD) {
+            
+    }
+     
+     public boolean realizarDeposito(float montoD) {
         Operaciones movimiento;
         setSaldoCuenta(getSaldoCuenta() + montoD);
         movimiento = new Operaciones(1, montoD);
@@ -320,7 +323,6 @@ public abstract class Cuenta implements ImptoTransaccionesFinancieras,  Serializ
      public boolean verificacionCheques(String codigoCheque){
          return true;
      }
-   }  
 }
 
     
