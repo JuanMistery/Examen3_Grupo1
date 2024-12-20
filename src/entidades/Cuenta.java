@@ -281,6 +281,9 @@ public abstract class Cuenta implements ImptoTransaccionesFinancieras,  Serializ
         Operaciones movimiento = new Operaciones(3, montoD);
         operaciones.add(movimiento);
         cuenta.realizarDeposito(montoD);
+    cuenta.setSaldoCuenta(cuenta.getSaldoCuenta() + montoD);
+    Operaciones movimientoDestino = new Operaciones(3, montoD);
+    cuenta.getOperaciones().add(movimientoDestino);
         if (montoD >= 1000) {
             float itf = calcularITF(montoD);
             setSaldoCuenta(getSaldoCuenta() - itf);
