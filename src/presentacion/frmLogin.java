@@ -208,7 +208,7 @@ public frmLogin() {
             cuenta=listaC.obtenerCuenta(posicion);
             if(cuenta.validarClave(correoElectronico, clave))
             {
-                FrmPrincipal frmPrincipal= new FrmPrincipal(cuenta);
+                FrmPrincipal frmPrincipal= new FrmPrincipal(posicion);
                 frmPrincipal.setLocationRelativeTo(null);
                 frmPrincipal.setVisible(true);
                 this.dispose();

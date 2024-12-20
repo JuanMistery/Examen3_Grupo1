@@ -85,14 +85,27 @@ public class ListaCuentas implements Serializable{
     }
     
     public boolean guardarEnArchivo(String Archivo) {
-        actualizarNumeroCuentas();
+        actualizarNumeroCuentas();  
+
+    
+        System.out.println("Saldo antes de guardar: " + obtenerCuenta(0).getSaldoCuenta()); 
+
+    
+        File archivo = new File(Archivo);
+        if (archivo.exists()) {
+            archivo.delete(); 
+        }
+
+    
         try (ObjectOutputStream oos = new ObjectOutputStream(new FileOutputStream(Archivo))) {
-            oos.writeObject(this); // Serializa y guarda el objeto actual
-            System.out.println("Ahorro: " + cantidadCuentasAhorro + "Corriente: "+ cantidadCuentasCorriente);
-            return true; // Éxito
+      
+            oos.writeObject(this); 
+            System.out.println("Ahorro: " + cantidadCuentasAhorro + " Corriente: " + cantidadCuentasCorriente);
+            return true;  
         } catch (IOException e) {
-            System.out.println("Ocurrio un error: ");
-            return false; // Fallo
+            System.out.println("Ocurrió un error al guardar el archivo.");
+            e.printStackTrace();  
+            return false; 
         }
         
     }

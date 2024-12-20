@@ -20,8 +20,8 @@ public class FrmPrincipal extends javax.swing.JFrame {
     /**
      * Creates new form FrmPrincipal
      */
-    public FrmPrincipal(Cuenta cuenta) {
-        cuentaB=cuenta;
+    public FrmPrincipal(int posicion) {
+        cuentaB=listaC.obtenerCuenta(posicion);
         initComponents();
     }
 
@@ -60,6 +60,14 @@ public class FrmPrincipal extends javax.swing.JFrame {
         mniCobrarCheque = new javax.swing.JMenuItem();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        addWindowListener(new java.awt.event.WindowAdapter() {
+            public void windowClosed(java.awt.event.WindowEvent evt) {
+                formWindowClosed(evt);
+            }
+            public void windowClosing(java.awt.event.WindowEvent evt) {
+                formWindowClosing(evt);
+            }
+        });
 
         dspFondo.setPreferredSize(new java.awt.Dimension(600, 500));
 
@@ -202,6 +210,18 @@ public class FrmPrincipal extends javax.swing.JFrame {
         ifrmInformacion IfrmInformacion = new ifrmInformacion(cuentaB);
         CentrarIF(IfrmInformacion);
     }//GEN-LAST:event_mniInformacionActionPerformed
+
+    private void formWindowClosed(java.awt.event.WindowEvent evt) {//GEN-FIRST:event_formWindowClosed
+        
+    }//GEN-LAST:event_formWindowClosed
+
+    private void formWindowClosing(java.awt.event.WindowEvent evt) {//GEN-FIRST:event_formWindowClosing
+        if (listaC.guardarEnArchivo("src/datos/DatosCuentas.dat")) {
+        System.out.println("Datos guardados.");
+    } else {
+        System.out.println("Error");
+    }
+    }//GEN-LAST:event_formWindowClosing
 
     /**
      * @param args the command line arguments
