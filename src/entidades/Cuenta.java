@@ -196,7 +196,7 @@ public abstract class Cuenta implements ImptoTransaccionesFinancieras,  Serializ
     public boolean validarClave(String clave) {
         return (getClave().compareTo(clave)==0);
     }
-     public class Operaciones {
+     public class Operaciones implements Serializable{
         private String numeroOperacion;
         private GregorianCalendar fechaOperacion;
         private int tipoOperacion;
