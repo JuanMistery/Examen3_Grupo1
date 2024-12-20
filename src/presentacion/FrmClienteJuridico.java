@@ -4,6 +4,8 @@
  */
 package presentacion;
 
+import datos.ListaCuentas;
+import datos.*;
 import entidades.*;
 
 /**
@@ -12,10 +14,13 @@ import entidades.*;
  */
 public class FrmClienteJuridico extends javax.swing.JFrame {
 
+    private Cuenta cuentaB;
+    private ListaCuentas listaC = ListaCuentas.cargarCuentas("DatosCuentas.dat");
     /**
      * Creates new form frmRegistroClienteJuridico
      */
     public FrmClienteJuridico(Cuenta cuenta) {
+        cuentaB=cuenta;
         initComponents();
     }
 
@@ -42,7 +47,7 @@ public class FrmClienteJuridico extends javax.swing.JFrame {
         txtDireccionOperacion = new javax.swing.JTextField();
         txtTelefonoJuridico = new javax.swing.JTextField();
         txtDocumentoConstitucion = new javax.swing.JTextField();
-        txtCorreoElectronicoJuridico1 = new javax.swing.JTextField();
+        txtCorreoElectronicoJuridico = new javax.swing.JTextField();
         lblNombreRepresentante = new javax.swing.JLabel();
         lblApellidoRepresentante = new javax.swing.JLabel();
         lblDireccionRepresentante = new javax.swing.JLabel();
@@ -50,11 +55,13 @@ public class FrmClienteJuridico extends javax.swing.JFrame {
         lblCorreoElectronicoRepresentante = new javax.swing.JLabel();
         lblDatosDelRepresentate = new javax.swing.JLabel();
         lblDatosDelRepresentate1 = new javax.swing.JLabel();
-        txtNombreRepresentate = new javax.swing.JTextField();
+        txtNombreRepresentante = new javax.swing.JTextField();
         txtApellidoRepresentante = new javax.swing.JTextField();
-        txtDireccionRepresentate = new javax.swing.JTextField();
+        txtDireccionRepresentante = new javax.swing.JTextField();
         txtTelefonoRepresentante = new javax.swing.JTextField();
         txtCorreoElectronicoRepresentante = new javax.swing.JTextField();
+        btnRegistrar = new javax.swing.JButton();
+        btnRetroceder = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -104,6 +111,20 @@ public class FrmClienteJuridico extends javax.swing.JFrame {
         lblDatosDelRepresentate1.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
         lblDatosDelRepresentate1.setText("DATOS DEL REPRESENTANTE:");
 
+        btnRegistrar.setText("Registrar");
+        btnRegistrar.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnRegistrarActionPerformed(evt);
+            }
+        });
+
+        btnRetroceder.setText("Retroceder");
+        btnRetroceder.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnRetrocederActionPerformed(evt);
+            }
+        });
+
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
@@ -141,7 +162,7 @@ public class FrmClienteJuridico extends javax.swing.JFrame {
                             .addGroup(layout.createSequentialGroup()
                                 .addComponent(lblCorreoElectronicoJuridico)
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 13, Short.MAX_VALUE)
-                                .addComponent(txtCorreoElectronicoJuridico1, javax.swing.GroupLayout.PREFERRED_SIZE, 264, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                .addComponent(txtCorreoElectronicoJuridico, javax.swing.GroupLayout.PREFERRED_SIZE, 264, javax.swing.GroupLayout.PREFERRED_SIZE))
                             .addGroup(layout.createSequentialGroup()
                                 .addComponent(lblDocumentoConstitucion)
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
@@ -162,16 +183,23 @@ public class FrmClienteJuridico extends javax.swing.JFrame {
                                         .addGap(184, 184, 184)
                                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                                             .addComponent(txtApellidoRepresentante, javax.swing.GroupLayout.PREFERRED_SIZE, 264, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                            .addComponent(txtNombreRepresentate, javax.swing.GroupLayout.PREFERRED_SIZE, 264, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                            .addComponent(txtDireccionRepresentate, javax.swing.GroupLayout.PREFERRED_SIZE, 264, javax.swing.GroupLayout.PREFERRED_SIZE))))
+                                            .addComponent(txtNombreRepresentante, javax.swing.GroupLayout.PREFERRED_SIZE, 264, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                            .addComponent(txtDireccionRepresentante, javax.swing.GroupLayout.PREFERRED_SIZE, 264, javax.swing.GroupLayout.PREFERRED_SIZE))))
                                 .addGap(0, 0, Short.MAX_VALUE)))))
                 .addGap(6, 6, 6))
             .addGroup(layout.createSequentialGroup()
                 .addGap(15, 15, 15)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(lblDatosDelRepresentate, javax.swing.GroupLayout.PREFERRED_SIZE, 284, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(lblDatosDelRepresentate1, javax.swing.GroupLayout.PREFERRED_SIZE, 284, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                    .addGroup(layout.createSequentialGroup()
+                        .addComponent(btnRetroceder)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addComponent(btnRegistrar))
+                    .addGroup(layout.createSequentialGroup()
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(lblDatosDelRepresentate, javax.swing.GroupLayout.PREFERRED_SIZE, 284, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(lblDatosDelRepresentate1, javax.swing.GroupLayout.PREFERRED_SIZE, 284, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addGap(0, 0, Short.MAX_VALUE)))
+                .addContainerGap())
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -183,11 +211,11 @@ public class FrmClienteJuridico extends javax.swing.JFrame {
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(layout.createSequentialGroup()
-                        .addComponent(txtNombreRepresentate, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addComponent(txtNombreRepresentante, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addComponent(txtApellidoRepresentante, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(txtDireccionRepresentate, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addComponent(txtDireccionRepresentante, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                             .addComponent(txtTelefonoRepresentante, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -219,7 +247,7 @@ public class FrmClienteJuridico extends javax.swing.JFrame {
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                             .addComponent(lblCorreoElectronicoJuridico)
-                            .addComponent(txtCorreoElectronicoJuridico1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                            .addComponent(txtCorreoElectronicoJuridico, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                         .addGap(14, 14, 14)
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                             .addComponent(lblDocumentoConstitucion)
@@ -234,11 +262,36 @@ public class FrmClienteJuridico extends javax.swing.JFrame {
                         .addComponent(txtDireccionOperacion, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                         .addComponent(txtTelefonoJuridico, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                .addContainerGap(15, Short.MAX_VALUE))
+                .addGap(18, 18, 18)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(btnRegistrar)
+                    .addComponent(btnRetroceder))
+                .addContainerGap(23, Short.MAX_VALUE))
         );
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
+
+    private void btnRetrocederActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnRetrocederActionPerformed
+        frmRegistrarCuenta FrmRegistrarCuenta =  new frmRegistrarCuenta(cuentaB);
+        FrmRegistrarCuenta.setVisible(true);
+        this.dispose();
+    }//GEN-LAST:event_btnRetrocederActionPerformed
+
+    private void btnRegistrarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnRegistrarActionPerformed
+        Cliente clienteB;
+        String nombreRepresentate = txtNombreRepresentante.getText();
+        String apellidosRepresentante = txtApellidoRepresentante.getText();
+        String direccionRepresentante =  txtDireccionRepresentante.getText();
+        String telefonoRepresentante = txtTelefonoRepresentante.getText();
+        String correoElectronico = txtCorreoElectronicoRepresentante.getText();
+        String razonSocial = txtNombreEmpresa.getText();
+        String ruc = txtRUC.getText();
+        String direccionFiscal = txtDireccionFiscal.getText();
+        String direccionOperacion = txtDireccionOperacion.getText();
+        String correoElectronicoJuridico = txtCorreoElectronicoJuridico.getText();
+        String documentoConstitucion = txtDocumentoConstitucion.getText();
+    }//GEN-LAST:event_btnRegistrarActionPerformed
 
     /**
      * @param args the command line arguments
@@ -246,6 +299,8 @@ public class FrmClienteJuridico extends javax.swing.JFrame {
     
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JButton btnRegistrar;
+    private javax.swing.JButton btnRetroceder;
     private javax.swing.JLabel lblApellidoRepresentante;
     private javax.swing.JLabel lblCorreoElectronicoJuridico;
     private javax.swing.JLabel lblCorreoElectronicoRepresentante;
@@ -262,14 +317,14 @@ public class FrmClienteJuridico extends javax.swing.JFrame {
     private javax.swing.JLabel lblTelefonoRepresentante;
     private javax.swing.JLabel lblTitulo;
     private javax.swing.JTextField txtApellidoRepresentante;
-    private javax.swing.JTextField txtCorreoElectronicoJuridico1;
+    private javax.swing.JTextField txtCorreoElectronicoJuridico;
     private javax.swing.JTextField txtCorreoElectronicoRepresentante;
     private javax.swing.JTextField txtDireccionFiscal;
     private javax.swing.JTextField txtDireccionOperacion;
-    private javax.swing.JTextField txtDireccionRepresentate;
+    private javax.swing.JTextField txtDireccionRepresentante;
     private javax.swing.JTextField txtDocumentoConstitucion;
     private javax.swing.JTextField txtNombreEmpresa;
-    private javax.swing.JTextField txtNombreRepresentate;
+    private javax.swing.JTextField txtNombreRepresentante;
     private javax.swing.JTextField txtRUC;
     private javax.swing.JTextField txtTelefonoJuridico;
     private javax.swing.JTextField txtTelefonoRepresentante;

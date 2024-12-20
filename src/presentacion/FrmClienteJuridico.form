@@ -62,7 +62,7 @@
                           <Group type="102" alignment="0" attributes="0">
                               <Component id="lblCorreoElectronicoJuridico" min="-2" max="-2" attributes="0"/>
                               <EmptySpace pref="13" max="32767" attributes="0"/>
-                              <Component id="txtCorreoElectronicoJuridico1" min="-2" pref="264" max="-2" attributes="0"/>
+                              <Component id="txtCorreoElectronicoJuridico" min="-2" pref="264" max="-2" attributes="0"/>
                           </Group>
                           <Group type="102" alignment="0" attributes="0">
                               <Component id="lblDocumentoConstitucion" min="-2" max="-2" attributes="0"/>
@@ -89,8 +89,8 @@
                                       <EmptySpace min="184" pref="184" max="-2" attributes="0"/>
                                       <Group type="103" groupAlignment="0" attributes="0">
                                           <Component id="txtApellidoRepresentante" min="-2" pref="264" max="-2" attributes="0"/>
-                                          <Component id="txtNombreRepresentate" alignment="0" min="-2" pref="264" max="-2" attributes="0"/>
-                                          <Component id="txtDireccionRepresentate" alignment="0" min="-2" pref="264" max="-2" attributes="0"/>
+                                          <Component id="txtNombreRepresentante" alignment="0" min="-2" pref="264" max="-2" attributes="0"/>
+                                          <Component id="txtDireccionRepresentante" alignment="0" min="-2" pref="264" max="-2" attributes="0"/>
                                       </Group>
                                   </Group>
                               </Group>
@@ -104,10 +104,20 @@
           <Group type="102" alignment="0" attributes="0">
               <EmptySpace min="-2" pref="15" max="-2" attributes="0"/>
               <Group type="103" groupAlignment="0" attributes="0">
-                  <Component id="lblDatosDelRepresentate" min="-2" pref="284" max="-2" attributes="0"/>
-                  <Component id="lblDatosDelRepresentate1" min="-2" pref="284" max="-2" attributes="0"/>
+                  <Group type="102" attributes="0">
+                      <Component id="btnRetroceder" min="-2" max="-2" attributes="0"/>
+                      <EmptySpace max="32767" attributes="0"/>
+                      <Component id="btnRegistrar" min="-2" max="-2" attributes="0"/>
+                  </Group>
+                  <Group type="102" attributes="0">
+                      <Group type="103" groupAlignment="0" attributes="0">
+                          <Component id="lblDatosDelRepresentate" min="-2" pref="284" max="-2" attributes="0"/>
+                          <Component id="lblDatosDelRepresentate1" min="-2" pref="284" max="-2" attributes="0"/>
+                      </Group>
+                      <EmptySpace min="0" pref="0" max="32767" attributes="0"/>
+                  </Group>
               </Group>
-              <EmptySpace max="32767" attributes="0"/>
+              <EmptySpace max="-2" attributes="0"/>
           </Group>
       </Group>
     </DimensionLayout>
@@ -121,11 +131,11 @@
               <EmptySpace type="unrelated" max="-2" attributes="0"/>
               <Group type="103" groupAlignment="0" attributes="0">
                   <Group type="102" attributes="0">
-                      <Component id="txtNombreRepresentate" min="-2" max="-2" attributes="0"/>
+                      <Component id="txtNombreRepresentante" min="-2" max="-2" attributes="0"/>
                       <EmptySpace max="-2" attributes="0"/>
                       <Component id="txtApellidoRepresentante" min="-2" max="-2" attributes="0"/>
                       <EmptySpace max="-2" attributes="0"/>
-                      <Component id="txtDireccionRepresentate" min="-2" max="-2" attributes="0"/>
+                      <Component id="txtDireccionRepresentante" min="-2" max="-2" attributes="0"/>
                       <EmptySpace max="-2" attributes="0"/>
                       <Group type="103" groupAlignment="3" attributes="0">
                           <Component id="txtTelefonoRepresentante" alignment="3" min="-2" max="-2" attributes="0"/>
@@ -162,7 +172,7 @@
                       <EmptySpace type="unrelated" max="-2" attributes="0"/>
                       <Group type="103" groupAlignment="3" attributes="0">
                           <Component id="lblCorreoElectronicoJuridico" alignment="3" min="-2" max="-2" attributes="0"/>
-                          <Component id="txtCorreoElectronicoJuridico1" alignment="3" min="-2" max="-2" attributes="0"/>
+                          <Component id="txtCorreoElectronicoJuridico" alignment="3" min="-2" max="-2" attributes="0"/>
                       </Group>
                       <EmptySpace min="-2" pref="14" max="-2" attributes="0"/>
                       <Group type="103" groupAlignment="3" attributes="0">
@@ -182,7 +192,12 @@
                       <Component id="txtTelefonoJuridico" min="-2" max="-2" attributes="0"/>
                   </Group>
               </Group>
-              <EmptySpace pref="15" max="32767" attributes="0"/>
+              <EmptySpace type="separate" max="-2" attributes="0"/>
+              <Group type="103" groupAlignment="0" attributes="0">
+                  <Component id="btnRegistrar" min="-2" max="-2" attributes="0"/>
+                  <Component id="btnRetroceder" min="-2" max="-2" attributes="0"/>
+              </Group>
+              <EmptySpace pref="23" max="32767" attributes="0"/>
           </Group>
       </Group>
     </DimensionLayout>
@@ -265,7 +280,7 @@
     </Component>
     <Component class="javax.swing.JTextField" name="txtDocumentoConstitucion">
     </Component>
-    <Component class="javax.swing.JTextField" name="txtCorreoElectronicoJuridico1">
+    <Component class="javax.swing.JTextField" name="txtCorreoElectronicoJuridico">
     </Component>
     <Component class="javax.swing.JLabel" name="lblNombreRepresentante">
       <Properties>
@@ -323,15 +338,31 @@
         <Property name="text" type="java.lang.String" value="DATOS DEL REPRESENTANTE:"/>
       </Properties>
     </Component>
-    <Component class="javax.swing.JTextField" name="txtNombreRepresentate">
+    <Component class="javax.swing.JTextField" name="txtNombreRepresentante">
     </Component>
     <Component class="javax.swing.JTextField" name="txtApellidoRepresentante">
     </Component>
-    <Component class="javax.swing.JTextField" name="txtDireccionRepresentate">
+    <Component class="javax.swing.JTextField" name="txtDireccionRepresentante">
     </Component>
     <Component class="javax.swing.JTextField" name="txtTelefonoRepresentante">
     </Component>
     <Component class="javax.swing.JTextField" name="txtCorreoElectronicoRepresentante">
+    </Component>
+    <Component class="javax.swing.JButton" name="btnRegistrar">
+      <Properties>
+        <Property name="text" type="java.lang.String" value="Registrar"/>
+      </Properties>
+      <Events>
+        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="btnRegistrarActionPerformed"/>
+      </Events>
+    </Component>
+    <Component class="javax.swing.JButton" name="btnRetroceder">
+      <Properties>
+        <Property name="text" type="java.lang.String" value="Retroceder"/>
+      </Properties>
+      <Events>
+        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="btnRetrocederActionPerformed"/>
+      </Events>
     </Component>
   </SubComponents>
 </Form>
