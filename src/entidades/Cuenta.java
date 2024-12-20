@@ -272,6 +272,36 @@ public abstract class Cuenta implements ImptoTransaccionesFinancieras,  Serializ
         }
             
     }
+public boolean realizarTransferencia(Cuenta cuenta, float montoD) {
+
+    if (montoD <= 0 || montoD > getSaldoCuenta()) {
+        return false; 
+    }
+
+ 
+    setSaldoCuenta(getSaldoCuenta() - montoD);
+    Operaciones movimiento = new Operaciones(3, montoD);
+    operaciones.add(movimiento);
+
+    
+    cuenta.setSaldoCuenta(cuenta.getSaldoCuenta() + montoD);
+    Operaciones movimientoDestino = new Operaciones(3, montoD);
+    cuenta.getOperaciones().add(movimientoDestino);
+
+   
+    if (montoD >= 1000) {
+        float itf = calcularITF(montoD);
+        setSaldoCuenta(getSaldoCuenta() - itf);
+        Operaciones movimientoITF = new Operaciones(4, itf);
+        operaciones.add(movimientoITF);
+    }
+
+    return true; 
+}  
+     
+     
+     
+     
      
      public boolean realizarDeposito(float montoD) {
         Operaciones movimiento;
