@@ -29,7 +29,7 @@
                       <EmptySpace min="-2" pref="16" max="-2" attributes="0"/>
                       <Component id="lblMontoCheque" min="-2" max="-2" attributes="0"/>
                       <EmptySpace type="unrelated" max="-2" attributes="0"/>
-                      <Component id="txtMontoChequera" min="-2" pref="234" max="-2" attributes="0"/>
+                      <Component id="txtNumeroChequera" min="-2" pref="234" max="-2" attributes="0"/>
                   </Group>
               </Group>
               <EmptySpace pref="37" max="32767" attributes="0"/>
@@ -52,7 +52,7 @@
               <EmptySpace min="-2" pref="39" max="-2" attributes="0"/>
               <Group type="103" groupAlignment="3" attributes="0">
                   <Component id="lblMontoCheque" alignment="3" min="-2" max="-2" attributes="0"/>
-                  <Component id="txtMontoChequera" alignment="3" min="-2" max="-2" attributes="0"/>
+                  <Component id="txtNumeroChequera" alignment="3" min="-2" max="-2" attributes="0"/>
               </Group>
               <EmptySpace min="0" pref="100" max="32767" attributes="0"/>
           </Group>
@@ -86,7 +86,7 @@
         <Property name="text" type="java.lang.String" value="N&#xb0; de Cheque: "/>
       </Properties>
     </Component>
-    <Component class="javax.swing.JTextField" name="txtMontoChequera">
+    <Component class="javax.swing.JTextField" name="txtNumeroChequera">
     </Component>
     <Component class="javax.swing.JButton" name="btnVolver">
       <Properties>
@@ -105,7 +105,6 @@
           <Font name="Segoe UI" size="14" style="2"/>
         </Property>
         <Property name="text" type="java.lang.String" value="Cobrar"/>
-        <Property name="enabled" type="boolean" value="false"/>
       </Properties>
       <Events>
         <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="btnCobrarChequeActionPerformed"/>

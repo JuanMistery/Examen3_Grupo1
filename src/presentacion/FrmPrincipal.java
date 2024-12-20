@@ -58,6 +58,7 @@ public class FrmPrincipal extends javax.swing.JFrame {
         mniTransferencia = new javax.swing.JMenuItem();
         mniEmitirCheque = new javax.swing.JMenuItem();
         mniCobrarCheque = new javax.swing.JMenuItem();
+        mniCrearChequera = new javax.swing.JMenuItem();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         addWindowListener(new java.awt.event.WindowAdapter() {
@@ -152,6 +153,14 @@ public class FrmPrincipal extends javax.swing.JFrame {
         });
         jMenu2.add(mniCobrarCheque);
 
+        mniCrearChequera.setText("Crear Chequera");
+        mniCrearChequera.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                mniCrearChequeraActionPerformed(evt);
+            }
+        });
+        jMenu2.add(mniCrearChequera);
+
         jMenuBar1.add(jMenu2);
 
         setJMenuBar(jMenuBar1);
@@ -187,7 +196,7 @@ public class FrmPrincipal extends javax.swing.JFrame {
     }//GEN-LAST:event_mniRetiroActionPerformed
 
     private void mniEmitirChequeActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_mniEmitirChequeActionPerformed
-        IfrmEmitirCheques ifrmEmisionCheque = new IfrmEmitirCheques();
+        IfrmEmitirCheques ifrmEmisionCheque = new IfrmEmitirCheques(cuentaB);
         CentrarIF(ifrmEmisionCheque);
     }//GEN-LAST:event_mniEmitirChequeActionPerformed
 
@@ -202,7 +211,7 @@ public class FrmPrincipal extends javax.swing.JFrame {
     }//GEN-LAST:event_mniTransferenciaActionPerformed
 
     private void mniCobrarChequeActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_mniCobrarChequeActionPerformed
-        IfrmCobrarCheque ifrmCobrarCheque = new IfrmCobrarCheque();
+        IfrmCobrarCheque ifrmCobrarCheque = new IfrmCobrarCheque(cuentaB);
         CentrarIF(ifrmCobrarCheque);
     }//GEN-LAST:event_mniCobrarChequeActionPerformed
 
@@ -212,16 +221,49 @@ public class FrmPrincipal extends javax.swing.JFrame {
     }//GEN-LAST:event_mniInformacionActionPerformed
 
     private void formWindowClosed(java.awt.event.WindowEvent evt) {//GEN-FIRST:event_formWindowClosed
-        
+        if (listaC.guardarEnArchivo("src/datos/DatosCuentas.dat")) {
+        System.out.println("Datos guardados.");
+        } else {
+        System.out.println("Error");
+        }
     }//GEN-LAST:event_formWindowClosed
 
     private void formWindowClosing(java.awt.event.WindowEvent evt) {//GEN-FIRST:event_formWindowClosing
         if (listaC.guardarEnArchivo("src/datos/DatosCuentas.dat")) {
         System.out.println("Datos guardados.");
-    } else {
-        System.out.println("Error");
-    }
+        } else {
+            System.out.println("Error");
+        }
     }//GEN-LAST:event_formWindowClosing
+
+    private void mniCrearChequeraActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_mniCrearChequeraActionPerformed
+        int limiteCheques = 0;
+        
+        boolean esValido = false;
+
+        while (!esValido) {
+            try {
+                String input = JOptionPane.showInputDialog(null, 
+                        "Ingresa cantidad maxima de cheques", 
+                        "Cantidad de Cheques", 
+                        JOptionPane.QUESTION_MESSAGE);
+                if (input == null) {
+                    JOptionPane.showMessageDialog(null, 
+                            "Operación cancelada.", 
+                            "Aviso", 
+                            JOptionPane.WARNING_MESSAGE);
+                    return; 
+                }
+                limiteCheques = Integer.parseInt(input);
+                esValido = true; 
+            } catch (NumberFormatException e) {
+                JOptionPane.showMessageDialog(null, "Por favor, ingresa un numeros enteros.", "Error", 
+                        JOptionPane.ERROR_MESSAGE);
+            }
+        }
+        if(((CuentaCorriente)cuentaB).crearChequera(limiteCheques))
+            JOptionPane.showMessageDialog(null, "Nueva chequera creada ");
+    }//GEN-LAST:event_mniCrearChequeraActionPerformed
 
     /**
      * @param args the command line arguments
@@ -249,6 +291,7 @@ public class FrmPrincipal extends javax.swing.JFrame {
     private javax.swing.JMenuBar jMenuBar1;
     private javax.swing.JMenuItem mniCerrarSesion;
     private javax.swing.JMenuItem mniCobrarCheque;
+    private javax.swing.JMenuItem mniCrearChequera;
     private javax.swing.JMenuItem mniDeposito;
     private javax.swing.JMenuItem mniEmitirCheque;
     private javax.swing.JMenuItem mniInformacion;

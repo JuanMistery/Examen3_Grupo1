@@ -242,6 +242,7 @@ public abstract class Cuenta implements ImptoTransaccionesFinancieras,  Serializ
                 case 3: tipo = "Transferencia"; break;
                 case 4: tipo = "ITF"; break;
                 case 5: tipo = "Interes mensual"; break;
+                case 6: tipo = "Cheque"; break;
             }
             return "\n\tNumero de operacion: " + getNumeroOperacion() +
                    "\n\tFecha: " + getFechaOperacionCorta() + 
@@ -337,7 +338,11 @@ public abstract class Cuenta implements ImptoTransaccionesFinancieras,  Serializ
          return true;
      }
      public boolean cobroCheques(float montoCheque){
-         return true;
+        Operaciones movimiento;
+        setSaldoCuenta(getSaldoCuenta()+montoCheque);
+        movimiento=new Operaciones(6, montoCheque);
+        operaciones.add(movimiento);
+        return true;
      }
      public boolean verificacionCheques(String codigoCheque){
          return true;

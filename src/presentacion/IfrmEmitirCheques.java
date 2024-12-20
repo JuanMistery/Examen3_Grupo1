@@ -4,17 +4,24 @@
  */
 package presentacion;
 
+import entidades.Cuenta;
+import entidades.CuentaCorriente;
+import entidades.CuentaCorriente.Chequera;
+import javax.swing.JOptionPane;
+
 /**
  *
  * @author ramos
  */
 public class IfrmEmitirCheques extends javax.swing.JInternalFrame {
 
+    Cuenta cuenta;
     /**
      * Creates new form IfrmEmitirCheques
      */
-    public IfrmEmitirCheques() {
+    public IfrmEmitirCheques(Cuenta cuenta) {
         initComponents();
+        this.cuenta = cuenta;
     }
 
     /**
@@ -31,6 +38,8 @@ public class IfrmEmitirCheques extends javax.swing.JInternalFrame {
         txtMontoChequera = new javax.swing.JTextField();
         btnVolver = new javax.swing.JButton();
         btnEmitirCheque = new javax.swing.JButton();
+        lblCobrador = new javax.swing.JLabel();
+        txtCobrador = new javax.swing.JTextField();
 
         lblEmitirCheque.setFont(new java.awt.Font("Segoe UI Black", 2, 18)); // NOI18N
         lblEmitirCheque.setText("EMITIR CHEQUE");
@@ -48,45 +57,55 @@ public class IfrmEmitirCheques extends javax.swing.JInternalFrame {
 
         btnEmitirCheque.setFont(new java.awt.Font("Segoe UI", 2, 14)); // NOI18N
         btnEmitirCheque.setText("Emitir");
-        btnEmitirCheque.setEnabled(false);
         btnEmitirCheque.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btnEmitirChequeActionPerformed(evt);
             }
         });
 
+        lblCobrador.setFont(new java.awt.Font("Segoe UI", 2, 14)); // NOI18N
+        lblCobrador.setText("Cobrador:");
+
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
+                .addGap(30, 30, 30)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(layout.createSequentialGroup()
-                        .addGap(113, 113, 113)
-                        .addComponent(lblEmitirCheque))
+                        .addComponent(btnVolver)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 195, Short.MAX_VALUE)
+                        .addComponent(btnEmitirCheque))
                     .addGroup(layout.createSequentialGroup()
-                        .addGap(30, 30, 30)
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addGroup(layout.createSequentialGroup()
-                                .addComponent(btnVolver)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                .addComponent(btnEmitirCheque))
-                            .addGroup(layout.createSequentialGroup()
-                                .addComponent(lblMontoCheque)
+                                .addComponent(lblCobrador)
                                 .addGap(18, 18, 18)
-                                .addComponent(txtMontoChequera, javax.swing.GroupLayout.PREFERRED_SIZE, 234, javax.swing.GroupLayout.PREFERRED_SIZE)))))
-                .addGap(39, 39, 39))
+                                .addComponent(txtCobrador, javax.swing.GroupLayout.PREFERRED_SIZE, 234, javax.swing.GroupLayout.PREFERRED_SIZE))
+                            .addComponent(lblMontoCheque))
+                        .addContainerGap())))
+            .addGroup(layout.createSequentialGroup()
+                .addGap(113, 113, 113)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(lblEmitirCheque)
+                    .addComponent(txtMontoChequera, javax.swing.GroupLayout.PREFERRED_SIZE, 234, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
                 .addContainerGap()
                 .addComponent(lblEmitirCheque)
-                .addGap(41, 41, 41)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 32, Short.MAX_VALUE)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(lblCobrador)
+                    .addComponent(txtCobrador, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(28, 28, 28)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(lblMontoCheque)
                     .addComponent(txtMontoChequera, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 100, Short.MAX_VALUE)
+                .addGap(59, 59, 59)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(btnVolver)
                     .addComponent(btnEmitirCheque))
@@ -97,19 +116,34 @@ public class IfrmEmitirCheques extends javax.swing.JInternalFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void btnVolverActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnVolverActionPerformed
-        // TODO add your handling code here:
+        this.dispose();
     }//GEN-LAST:event_btnVolverActionPerformed
 
     private void btnEmitirChequeActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnEmitirChequeActionPerformed
-        // TODO add your handling code here:
+        float montoCheque = Float.parseFloat(txtMontoChequera.getText());
+        String cobrador = txtCobrador.getText();
+        int posicion = ((CuentaCorriente)cuenta).buscarChequeraDisponible();
+        if(posicion!=-1){
+            Chequera chequera = ((CuentaCorriente)cuenta).obtenerChequera(posicion);
+            chequera.agregarCheque(cobrador, montoCheque);
+            int posicionCheque = chequera.getNumeroCheques()-1;
+            JOptionPane.showMessageDialog(null, "Cheque emitido \nNumero Cheque: "+chequera.obtenerCheque(posicionCheque).getNumeroCheque()+
+                    "\nCobrador: "+cobrador+" Monto: " + chequera.obtenerCheque(posicionCheque).getMonto());
+            
+            
+        }
+        else JOptionPane.showMessageDialog(null, "Porfavor crear una una chequera\ntodas las chequeras han alcanzado el limite");
+        
     }//GEN-LAST:event_btnEmitirChequeActionPerformed
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton btnEmitirCheque;
     private javax.swing.JButton btnVolver;
+    private javax.swing.JLabel lblCobrador;
     private javax.swing.JLabel lblEmitirCheque;
     private javax.swing.JLabel lblMontoCheque;
+    private javax.swing.JTextField txtCobrador;
     private javax.swing.JTextField txtMontoChequera;
     // End of variables declaration//GEN-END:variables
 }

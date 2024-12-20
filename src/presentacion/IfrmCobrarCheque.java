@@ -4,17 +4,27 @@
  */
 package presentacion;
 
+import datos.ListaCuentas;
+import entidades.Cuenta;
+import entidades.CuentaCorriente;
+import entidades.CuentaCorriente.Chequera;
+import entidades.CuentaCorriente.Chequera.Cheque;
+import javax.swing.JOptionPane;
+import javax.swing.plaf.OptionPaneUI;
+
 /**
  *
  * @author ramos
  */
 public class IfrmCobrarCheque extends javax.swing.JInternalFrame {
-
+    private ListaCuentas listaC = ListaCuentas.cargarCuentas("src/datos/DatosCuentas.dat");
+    Cuenta cuenta;
     /**
      * Creates new form IfrmCobrarCheque
      */
-    public IfrmCobrarCheque() {
+    public IfrmCobrarCheque(Cuenta cuenta) {
         initComponents();
+        this.cuenta= cuenta;
     }
 
     /**
@@ -28,7 +38,7 @@ public class IfrmCobrarCheque extends javax.swing.JInternalFrame {
 
         lblTransferencia = new javax.swing.JLabel();
         lblMontoCheque = new javax.swing.JLabel();
-        txtMontoChequera = new javax.swing.JTextField();
+        txtNumeroChequera = new javax.swing.JTextField();
         btnVolver = new javax.swing.JButton();
         btnCobrarCheque = new javax.swing.JButton();
 
@@ -48,7 +58,6 @@ public class IfrmCobrarCheque extends javax.swing.JInternalFrame {
 
         btnCobrarCheque.setFont(new java.awt.Font("Segoe UI", 2, 14)); // NOI18N
         btnCobrarCheque.setText("Cobrar");
-        btnCobrarCheque.setEnabled(false);
         btnCobrarCheque.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btnCobrarChequeActionPerformed(evt);
@@ -68,7 +77,7 @@ public class IfrmCobrarCheque extends javax.swing.JInternalFrame {
                         .addGap(16, 16, 16)
                         .addComponent(lblMontoCheque)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                        .addComponent(txtMontoChequera, javax.swing.GroupLayout.PREFERRED_SIZE, 234, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                        .addComponent(txtNumeroChequera, javax.swing.GroupLayout.PREFERRED_SIZE, 234, javax.swing.GroupLayout.PREFERRED_SIZE)))
                 .addContainerGap(37, Short.MAX_VALUE))
             .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                 .addGroup(layout.createSequentialGroup()
@@ -85,7 +94,7 @@ public class IfrmCobrarCheque extends javax.swing.JInternalFrame {
                 .addGap(39, 39, 39)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(lblMontoCheque)
-                    .addComponent(txtMontoChequera, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(txtNumeroChequera, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(0, 100, Short.MAX_VALUE))
             .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                 .addGroup(layout.createSequentialGroup()
@@ -100,11 +109,32 @@ public class IfrmCobrarCheque extends javax.swing.JInternalFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void btnVolverActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnVolverActionPerformed
-        // TODO add your handling code here:
+        this.dispose();
     }//GEN-LAST:event_btnVolverActionPerformed
 
     private void btnCobrarChequeActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnCobrarChequeActionPerformed
-        // TODO add your handling code here:
+        Cuenta cuentaB;
+        String numeroCheque = txtNumeroChequera.getText();
+        int posicionCuenta = listaC.buscarChequeraCuentaCorriente(numeroCheque);
+        if (posicionCuenta!=-1){
+            cuentaB = listaC.obtenerCuenta(posicionCuenta);
+            int posicionChequera = ((CuentaCorriente)cuentaB).buscarChequeTodasChequeras(numeroCheque);
+            Chequera chequera = ((CuentaCorriente)cuentaB).obtenerChequera(posicionChequera);
+            int posicionCheque = chequera.buscarCheque(numeroCheque);
+            Cheque cheque = chequera.obtenerCheque(posicionCheque);
+            System.out.println("\nmonto:"+cheque.getMonto());
+            if(cuenta.cobroCheques(cheque.getMonto())){
+                if(((CuentaCorriente)cuentaB).cobrarChequera(posicionChequera,posicionCheque, cheque.getMonto())){
+                    JOptionPane.showMessageDialog(null, "Se cobro con exito el cheque: ");
+                    listaC.guardarEnArchivo("src/datos/DatosCuentas.dat");
+                }
+                
+                
+            }
+        }
+        else{
+            JOptionPane.showMessageDialog(null, "No se encontro el numero de cheque solicitado ");
+        }
     }//GEN-LAST:event_btnCobrarChequeActionPerformed
 
 
@@ -113,6 +143,6 @@ public class IfrmCobrarCheque extends javax.swing.JInternalFrame {
     private javax.swing.JButton btnVolver;
     private javax.swing.JLabel lblMontoCheque;
     private javax.swing.JLabel lblTransferencia;
-    private javax.swing.JTextField txtMontoChequera;
+    private javax.swing.JTextField txtNumeroChequera;
     // End of variables declaration//GEN-END:variables
 }

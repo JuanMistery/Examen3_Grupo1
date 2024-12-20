@@ -149,4 +149,17 @@ public class ListaCuentas implements Serializable{
         
     }
     
+    public int buscarChequeraCuentaCorriente(String numeroCheque){
+        Cuenta cuentaB;
+        int posicion;
+        for(int i=0;i<listaCuentas.size();i++){
+            cuentaB = listaCuentas.get(i);
+            if(cuentaB.getTipoCuenta()==2){
+                posicion = ((CuentaCorriente)cuentaB).buscarChequeTodasChequeras(numeroCheque);
+                if(posicion!=-1)
+                    return i;
+            }
+        }
+        return -1;
+    }
 }

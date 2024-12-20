@@ -151,6 +151,7 @@ Cuenta cuenta;
         float montoRetiro = Float.parseFloat(txtSaldoRetiro.getText());
         if(cuenta.realizarRetiro(montoRetiro)){
             JOptionPane.showMessageDialog(null, "Dinero retirado");
+            this.dispose();
         }
         else JOptionPane.showMessageDialog(null, "No cuenta con suficiente saldo ");
     }//GEN-LAST:event_btnRetirarActionPerformed
