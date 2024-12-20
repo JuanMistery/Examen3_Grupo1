@@ -202,6 +202,7 @@ public class frmRegistrarCuenta extends javax.swing.JFrame {
     }//GEN-LAST:event_btnAtrasActionPerformed
 
     private void btnSiguienteActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnSiguienteActionPerformed
+        try {
         float saldo=Float.parseFloat(txtSaldo.getText());
         String clave = txtClave.getText();
         int tipoMoneda=cmbMoneda.getSelectedIndex()+1;
@@ -232,9 +233,14 @@ public class frmRegistrarCuenta extends javax.swing.JFrame {
             FrmClienteJuridico frmClienteJuridico = new FrmClienteJuridico(cuentaB);
             frmClienteJuridico.setVisible(true);
             this.dispose();
-        }
+        
     }//GEN-LAST:event_btnSiguienteActionPerformed
-    
+    } catch (NumberFormatException e) {
+            javax.swing.JOptionPane.showMessageDialog(this, "Por favor ingrese valores válidos.", "Error de Entrada", javax.swing.JOptionPane.ERROR_MESSAGE);
+        } catch (Exception e) {
+            javax.swing.JOptionPane.showMessageDialog(this, "Ocurrió un error inesperado: " + e.getMessage(), "Error", javax.swing.JOptionPane.ERROR_MESSAGE);
+}
+    }
     public static void main(String args[]) {
         /* Set the Nimbus look and feel */
         //<editor-fold defaultstate="collapsed" desc=" Look and feel setting code (optional) ">
