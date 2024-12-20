@@ -4,6 +4,7 @@
  */
 package presentacion;
 
+import datos.ListaCuentas;
 import entidades.*;
 import java.awt.*;
 import javax.swing.*;
@@ -15,6 +16,7 @@ import javax.swing.*;
 public class FrmPrincipal extends javax.swing.JFrame {
     
     private Cuenta cuentaB;
+    private ListaCuentas listaC = ListaCuentas.cargarCuentas("src/datos/DatosCuentas.dat");
     /**
      * Creates new form FrmPrincipal
      */
@@ -75,6 +77,11 @@ public class FrmPrincipal extends javax.swing.JFrame {
         jMenu1.setText("Cuenta");
 
         mniInformacion.setText("Informacion");
+        mniInformacion.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                mniInformacionActionPerformed(evt);
+            }
+        });
         jMenu1.add(mniInformacion);
 
         mniMovimientos.setText("Movimientos");
@@ -156,8 +163,8 @@ public class FrmPrincipal extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void mniMovimientosActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_mniMovimientosActionPerformed
-        ifrmInformacion IfrmInformacion = new ifrmInformacion(cuentaB);
-        CentrarIF(IfrmInformacion);
+        ifrmOperaciones IfrmOperaciones = new ifrmOperaciones(cuentaB);
+        CentrarIF(IfrmOperaciones);
     }//GEN-LAST:event_mniMovimientosActionPerformed
 
     private void mniCerrarSesionActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_mniCerrarSesionActionPerformed
@@ -190,6 +197,11 @@ public class FrmPrincipal extends javax.swing.JFrame {
         IfrmCobrarCheque ifrmCobrarCheque = new IfrmCobrarCheque();
         CentrarIF(ifrmCobrarCheque);
     }//GEN-LAST:event_mniCobrarChequeActionPerformed
+
+    private void mniInformacionActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_mniInformacionActionPerformed
+        ifrmInformacion IfrmInformacion = new ifrmInformacion(cuentaB);
+        CentrarIF(IfrmInformacion);
+    }//GEN-LAST:event_mniInformacionActionPerformed
 
     /**
      * @param args the command line arguments

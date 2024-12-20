@@ -30,7 +30,7 @@ public class ifrmOperaciones extends javax.swing.JInternalFrame {
             int tipoOperacion = operacion.getTipoOperacion();
             float montoOperacion = operacion.getMontoOperacion();
 
-            model.addRow(new Object[]{numeroOperacion, fechaOperacion, tipoOperacion, montoOperacion});
+            model.addRow(new Object[]{numeroOperacion, fechaOperacion, obtenerNombreTipo(tipoOperacion), montoOperacion});
         }
          tblOperaciones.setModel(model);
     }
