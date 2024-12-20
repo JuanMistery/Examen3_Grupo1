@@ -105,7 +105,6 @@ public class IfrmDeposito extends javax.swing.JInternalFrame {
             JOptionPane.showMessageDialog(this, "Deposito realizado con exito ", "Deposito", 2);
             
         }
-        
         this.dispose();
         
     }//GEN-LAST:event_btnDepositarActionPerformed

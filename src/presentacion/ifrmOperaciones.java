@@ -24,8 +24,7 @@ public class ifrmOperaciones extends javax.swing.JInternalFrame {
         model.addColumn("Fecha de Operación");
         model.addColumn("Tipo de Operación");
         model.addColumn("Monto de Operación");
-
-                for (Operaciones operacion : listaOperaciones) {
+        for (Operaciones operacion : listaOperaciones) {
             String numeroOperacion = operacion.getNumeroOperacion();
             String fechaOperacion = operacion.getFechaOperacionCorta();
             int tipoOperacion = operacion.getTipoOperacion();
@@ -33,7 +32,7 @@ public class ifrmOperaciones extends javax.swing.JInternalFrame {
 
             model.addRow(new Object[]{numeroOperacion, fechaOperacion, tipoOperacion, montoOperacion});
         }
-         jTable1.setModel(model);
+         tblOperaciones.setModel(model);
     }
     private String obtenerNombreTipo(int tipoOperacion) {
         switch (tipoOperacion) {
@@ -61,37 +60,43 @@ public class ifrmOperaciones extends javax.swing.JInternalFrame {
     private void initComponents() {
 
         jScrollPane1 = new javax.swing.JScrollPane();
-        jTable1 = new javax.swing.JTable();
+        tblOperaciones = new javax.swing.JTable();
 
         setTitle("Operaciones");
 
-        jTable1.setModel(new javax.swing.table.DefaultTableModel(
+        tblOperaciones.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
-                {null, null, null, null},
-                {null, null, null, null},
-                {null, null, null, null},
-                {null, null, null, null}
+
             },
             new String [] {
-                "Title 1", "Title 2", "Title 3", "Title 4"
+                "Numero De Operacion", "Tipo De Operacion", "Monto De Operacion", "Fecha de Operacion"
             }
-        ));
-        jScrollPane1.setViewportView(jTable1);
+        ) {
+            Class[] types = new Class [] {
+                java.lang.String.class, java.lang.String.class, java.lang.Float.class, java.lang.String.class
+            };
+
+            public Class getColumnClass(int columnIndex) {
+                return types [columnIndex];
+            }
+        });
+        jScrollPane1.setViewportView(tblOperaciones);
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
-                .addComponent(jScrollPane1, javax.swing.GroupLayout.DEFAULT_SIZE, 539, Short.MAX_VALUE)
-                .addContainerGap())
+                .addGap(22, 22, 22)
+                .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 541, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(56, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(layout.createSequentialGroup()
-                .addGap(15, 15, 15)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                .addContainerGap(58, Short.MAX_VALUE)
                 .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 360, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(18, Short.MAX_VALUE))
+                .addGap(18, 18, 18))
         );
 
         pack();
@@ -100,6 +105,6 @@ public class ifrmOperaciones extends javax.swing.JInternalFrame {
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JScrollPane jScrollPane1;
-    private javax.swing.JTable jTable1;
+    private javax.swing.JTable tblOperaciones;
     // End of variables declaration//GEN-END:variables
 }
