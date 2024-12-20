@@ -14,11 +14,17 @@ import entidades.*;
  */
 public class ifrmInformacion extends javax.swing.JInternalFrame {
 
+    private Cuenta cuentaB;
     /**
      * Creates new form ifrmInformacion
      */
     public ifrmInformacion(Cuenta cuenta) {
+        cuentaB = cuenta;
         initComponents();
+        lblTipoCuenta.setText("TipoCuenta: "+(cuentaB.getTipoCuenta()==1?"Cuenta de Ahorro":"Cuenta Corriente"));
+        lblNumeroCuenta.setText("Numero De Cuenta: "+cuentaB.getNumeroCuenta());
+        lblFechaCreacion.setText("Fecha de Creacion: "+cuentaB.getFechaCreacionCorta());
+        lblTipoMoneda.setText("Tipo de Moneda: "+(cuentaB.getTipoMonedaCuenta()==1?"Soles":(cuentaB.getTipoMonedaCuenta()==2?"Dolares":"Euros")));
     }
 
     /**
@@ -43,27 +49,85 @@ public class ifrmInformacion extends javax.swing.JInternalFrame {
                 }
             }
         };
-        jLabel1 = new javax.swing.JLabel();
+        lblTipoCuenta = new javax.swing.JLabel();
+        lblNumeroCuenta = new javax.swing.JLabel();
+        lblFechaCreacion = new javax.swing.JLabel();
+        lblSaldo = new javax.swing.JLabel();
+        cbxSaldo = new javax.swing.JCheckBox();
+        btnCerrar = new javax.swing.JButton();
+        lblTipoMoneda = new javax.swing.JLabel();
 
-        jLabel1.setText("jLabel1");
+        lblTipoCuenta.setText("TipoCuenta: ");
 
-        jDesktopPane1.setLayer(jLabel1, javax.swing.JLayeredPane.DEFAULT_LAYER);
+        lblNumeroCuenta.setText("Numero de Cuenta:");
+
+        lblFechaCreacion.setText("Fecha de Creacion:");
+
+        lblSaldo.setText("Saldo: *****");
+
+        cbxSaldo.setText("Ver Saldo");
+        cbxSaldo.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                cbxSaldoActionPerformed(evt);
+            }
+        });
+
+        btnCerrar.setText("Cerrar");
+        btnCerrar.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnCerrarActionPerformed(evt);
+            }
+        });
+
+        lblTipoMoneda.setText("Tipo de Moneda: ");
+
+        jDesktopPane1.setLayer(lblTipoCuenta, javax.swing.JLayeredPane.DEFAULT_LAYER);
+        jDesktopPane1.setLayer(lblNumeroCuenta, javax.swing.JLayeredPane.DEFAULT_LAYER);
+        jDesktopPane1.setLayer(lblFechaCreacion, javax.swing.JLayeredPane.DEFAULT_LAYER);
+        jDesktopPane1.setLayer(lblSaldo, javax.swing.JLayeredPane.DEFAULT_LAYER);
+        jDesktopPane1.setLayer(cbxSaldo, javax.swing.JLayeredPane.DEFAULT_LAYER);
+        jDesktopPane1.setLayer(btnCerrar, javax.swing.JLayeredPane.DEFAULT_LAYER);
+        jDesktopPane1.setLayer(lblTipoMoneda, javax.swing.JLayeredPane.DEFAULT_LAYER);
 
         javax.swing.GroupLayout jDesktopPane1Layout = new javax.swing.GroupLayout(jDesktopPane1);
         jDesktopPane1.setLayout(jDesktopPane1Layout);
         jDesktopPane1Layout.setHorizontalGroup(
             jDesktopPane1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jDesktopPane1Layout.createSequentialGroup()
-                .addGap(24, 24, 24)
-                .addComponent(jLabel1)
-                .addContainerGap(398, Short.MAX_VALUE))
+                .addGap(36, 36, 36)
+                .addGroup(jDesktopPane1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(lblFechaCreacion, javax.swing.GroupLayout.PREFERRED_SIZE, 300, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addGroup(jDesktopPane1Layout.createSequentialGroup()
+                        .addComponent(lblTipoCuenta, javax.swing.GroupLayout.PREFERRED_SIZE, 300, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(18, 18, 18)
+                        .addComponent(btnCerrar))
+                    .addComponent(lblNumeroCuenta, javax.swing.GroupLayout.PREFERRED_SIZE, 300, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addGroup(jDesktopPane1Layout.createSequentialGroup()
+                        .addGroup(jDesktopPane1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
+                            .addComponent(lblTipoMoneda, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                            .addComponent(lblSaldo, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, 300, Short.MAX_VALUE))
+                        .addGap(18, 18, 18)
+                        .addComponent(cbxSaldo)))
+                .addContainerGap(44, Short.MAX_VALUE))
         );
         jDesktopPane1Layout.setVerticalGroup(
             jDesktopPane1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jDesktopPane1Layout.createSequentialGroup()
-                .addGap(25, 25, 25)
-                .addComponent(jLabel1)
-                .addContainerGap(350, Short.MAX_VALUE))
+                .addGap(11, 11, 11)
+                .addGroup(jDesktopPane1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(lblTipoCuenta)
+                    .addComponent(btnCerrar))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(lblNumeroCuenta)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(lblFechaCreacion)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addGroup(jDesktopPane1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(lblSaldo)
+                    .addComponent(cbxSaldo))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(lblTipoMoneda)
+                .addContainerGap(265, Short.MAX_VALUE))
         );
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
@@ -80,9 +144,30 @@ public class ifrmInformacion extends javax.swing.JInternalFrame {
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
+    private void cbxSaldoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_cbxSaldoActionPerformed
+        if(cbxSaldo.isSelected())
+        {
+            lblSaldo.setText("Saldo: "+cuentaB.getSaldoCuenta());
+        }
+        else
+        {
+            lblSaldo.setText("Saldo: *****");
+        }
+    }//GEN-LAST:event_cbxSaldoActionPerformed
+
+    private void btnCerrarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnCerrarActionPerformed
+        this.dispose();
+    }//GEN-LAST:event_btnCerrarActionPerformed
+
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JButton btnCerrar;
+    private javax.swing.JCheckBox cbxSaldo;
     private javax.swing.JDesktopPane jDesktopPane1;
-    private javax.swing.JLabel jLabel1;
+    private javax.swing.JLabel lblFechaCreacion;
+    private javax.swing.JLabel lblNumeroCuenta;
+    private javax.swing.JLabel lblSaldo;
+    private javax.swing.JLabel lblTipoCuenta;
+    private javax.swing.JLabel lblTipoMoneda;
     // End of variables declaration//GEN-END:variables
 }
