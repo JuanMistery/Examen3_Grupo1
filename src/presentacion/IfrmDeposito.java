@@ -33,27 +33,13 @@ public class IfrmDeposito extends javax.swing.JInternalFrame {
         lblSaldoActual1 = new javax.swing.JLabel();
         txtSaldoDeposito = new javax.swing.JTextField();
         btnDepositar = new javax.swing.JButton();
-        btnVolver = new javax.swing.JButton();
+        btnCerrar = new javax.swing.JButton();
 
         lblDeposito.setFont(new java.awt.Font("Segoe UI Black", 2, 18)); // NOI18N
         lblDeposito.setText("DEPOSITO");
 
         lblSaldoActual1.setFont(new java.awt.Font("Segoe UI", 2, 14)); // NOI18N
         lblSaldoActual1.setText("Ingrese Saldo a Depositar:");
-
-        txtSaldoDeposito.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                txtSaldoDepositoActionPerformed(evt);
-            }
-        });
-        txtSaldoDeposito.addKeyListener(new java.awt.event.KeyAdapter() {
-            public void keyReleased(java.awt.event.KeyEvent evt) {
-                txtSaldoDepositoKeyReleased(evt);
-            }
-            public void keyTyped(java.awt.event.KeyEvent evt) {
-                txtSaldoDepositoKeyTyped(evt);
-            }
-        });
 
         btnDepositar.setFont(new java.awt.Font("Segoe UI", 2, 14)); // NOI18N
         btnDepositar.setText("Deposito");
@@ -63,11 +49,11 @@ public class IfrmDeposito extends javax.swing.JInternalFrame {
             }
         });
 
-        btnVolver.setFont(new java.awt.Font("Segoe UI", 2, 14)); // NOI18N
-        btnVolver.setText("Volver");
-        btnVolver.addActionListener(new java.awt.event.ActionListener() {
+        btnCerrar.setFont(new java.awt.Font("Segoe UI", 2, 14)); // NOI18N
+        btnCerrar.setText("Cerrar");
+        btnCerrar.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                btnVolverActionPerformed(evt);
+                btnCerrarActionPerformed(evt);
             }
         });
 
@@ -89,7 +75,7 @@ public class IfrmDeposito extends javax.swing.JInternalFrame {
                 .addContainerGap(105, Short.MAX_VALUE))
             .addGroup(layout.createSequentialGroup()
                 .addGap(44, 44, 44)
-                .addComponent(btnVolver)
+                .addComponent(btnCerrar)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addComponent(btnDepositar)
                 .addGap(30, 30, 30))
@@ -106,16 +92,12 @@ public class IfrmDeposito extends javax.swing.JInternalFrame {
                 .addGap(66, 66, 66)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(btnDepositar)
-                    .addComponent(btnVolver))
+                    .addComponent(btnCerrar))
                 .addContainerGap(72, Short.MAX_VALUE))
         );
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
-
-    private void txtSaldoDepositoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtSaldoDepositoActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_txtSaldoDepositoActionPerformed
 
     private void btnDepositarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnDepositarActionPerformed
         float montoDeposito = Float.parseFloat(txtSaldoDeposito.getText());
@@ -128,25 +110,14 @@ public class IfrmDeposito extends javax.swing.JInternalFrame {
         
     }//GEN-LAST:event_btnDepositarActionPerformed
 
-    private void btnVolverActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnVolverActionPerformed
+    private void btnCerrarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnCerrarActionPerformed
         this.dispose();
-    }//GEN-LAST:event_btnVolverActionPerformed
-
-    private void txtSaldoDepositoKeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txtSaldoDepositoKeyReleased
-        // TODO add your handling code here:
-    }//GEN-LAST:event_txtSaldoDepositoKeyReleased
-
-    private void txtSaldoDepositoKeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txtSaldoDepositoKeyTyped
-        char c = evt.getKeyChar();
-        if (!Character.isDigit(c)) {
-            evt.consume();
-        }
-    }//GEN-LAST:event_txtSaldoDepositoKeyTyped
+    }//GEN-LAST:event_btnCerrarActionPerformed
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JButton btnCerrar;
     private javax.swing.JButton btnDepositar;
-    private javax.swing.JButton btnVolver;
     private javax.swing.JLabel lblDeposito;
     private javax.swing.JLabel lblSaldoActual1;
     private javax.swing.JTextField txtSaldoDeposito;
