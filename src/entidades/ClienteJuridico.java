@@ -19,8 +19,8 @@ public class ClienteJuridico extends Cliente{
     private String correoElectronicoJuridico;
     private String documentoConstitucion;
 
-    public ClienteJuridico(String razonSocial, String ruc, String direccionFiscal, String direccionOperacion, String telefonoJuridico, String correoElectronicoJuridico, String documentoConstitucion, int tipoCliente, String nombres, String apellidos, String direccion, String telefono, String correoElectronico) {
-        super(tipoCliente, nombres, apellidos, direccion, telefono, correoElectronico);
+    public ClienteJuridico(String razonSocial, String ruc, String direccionFiscal, String direccionOperacion, String telefonoJuridico, String correoElectronicoJuridico, String documentoConstitucion,String nombres, String apellidos, String direccion, String telefono, String correoElectronico) {
+        super(2, nombres, apellidos, direccion, telefono, correoElectronico);
         this.razonSocial = razonSocial;
         this.ruc = ruc;
         this.direccionFiscal = direccionFiscal;
