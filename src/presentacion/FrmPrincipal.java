@@ -175,7 +175,7 @@ public class FrmPrincipal extends javax.swing.JFrame {
     }//GEN-LAST:event_mniEmitirChequeActionPerformed
 
     private void mniDepositoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_mniDepositoActionPerformed
-        IfrmDeposito ifrmDeposito = new IfrmDeposito();
+        IfrmDeposito ifrmDeposito = new IfrmDeposito(cuentaB);
         CentrarIF(ifrmDeposito);
     }//GEN-LAST:event_mniDepositoActionPerformed
 
